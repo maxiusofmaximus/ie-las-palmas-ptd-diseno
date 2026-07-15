@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 7 · Importación de Excel · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 7</strong> · Importación de históricos desde Excel — Rector/Admin</span>
+    <span>RF-070 · RF-071 · RF-072 · RF-073 · RF-076</span>
+  </div>
+
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>Importación de históricos</span>
+      </div>
+      <div class="ie-header__usuario">
+        <strong>Don Jorge Marulanda</strong> · Rector
+        &nbsp;|&nbsp; <a href="02-login-sso.html">Cerrar sesión</a>
+      </div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="03-dashboard-rectoria.html">Panel</a></li>
+        <li><a href="#" aria-current="page">Importar Excel</a></li>
+        <li><a href="#">Lotes históricos</a></li>
+        <li><a href="08-administracion.html">Administración</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ie-contenedor">
+    <h1 style="color:var(--ie-verde);margin-top:0">Importación de Planes de Aula desde Excel</h1>
+    <p class="ayuda" style="margin-top:-8px">Restringido a Rector y Administrador del sistema. Trazabilidad completa (RF-070..076).</p>
+
+    <!-- Wizard de pasos -->
+    <div class="pasos">
+      <div class="pasos__paso pasos__paso--ok">1. Cargar archivo</div>
+      <div class="pasos__paso pasos__paso--activo">2. Validación estructural</div>
+      <div class="pasos__paso">3. Transformar y mapear</div>
+      <div class="pasos__paso">4. Confirmar y procesar</div>
+      <div class="pasos__paso">5. Validar lote (Rectoría)</div>
+    </div>
+
+    <!-- Paso 2 visible -->
+    <section class="panel">
+      <div class="panel__encabezado">Reporte de validación previa (RF-071)</div>
+      <div class="panel__cuerpo">
+        <div class="aviso aviso--info">
+          Archivo: <strong>PLAN DE AULA 2023 ESPAÑOL.xlsx</strong> · 352 KB · 8 hojas (FORMATO + 7 periodos)
+        </div>
+
+        <div class="ie-grid ie-grid--4">
+          <div class="kpi"><div class="kpi__etiqueta">Filas leídas</div><div class="kpi__valor">204</div></div>
+          <div class="kpi kpi--exito"><div class="kpi__etiqueta">Válidas</div><div class="kpi__valor">201</div></div>
+          <div class="kpi kpi--alerta"><div class="kpi__etiqueta">Advertencias</div><div class="kpi__valor">2</div></div>
+          <div class="kpi kpi--error"><div class="kpi__etiqueta">Errores de bloqueo</div><div class="kpi__valor">3</div></div>
+        </div>
+
+        <h4 style="color:var(--ie-error)">Errores de bloqueo</h4>
+        <table class="ie-tabla">
+          <thead><tr><th>Fila</th><th>Hoja</th><th>Campo</th><th>Detalle</th></tr></thead>
+          <tbody>
+            <tr><td>14</td><td>2°</td><td>Periodo</td><td>Falta el número de periodo</td></tr>
+            <tr><td>89</td><td>3°</td><td>Indicador %</td><td>Porcentaje 110 (mayor a 100)</td></tr>
+            <tr><td>152</td><td>5°</td><td>Docente</td><td>Sin docente asignado</td></tr>
+          </tbody>
+        </table>
+
+        <h4 style="color:var(--ie-amarillo)">Advertencias (no bloquean)</h4>
+        <ul style="font-size:14px">
+          <li>Fila 32: dos grupos en el campo "Grado" — se separarán en dos seguimientos.</li>
+          <li>Fila 178: eje sin número — se numerará automáticamente.</li>
+        </ul>
+
+        <div class="aviso aviso--alerta">
+          Si procede, el sistema creará 201 planes en una <strong>transacción única (Unit of Work)</strong> y revertirá todo si hay error (RF-072).
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn btn--secundario">Descargar reporte de validación</button>
+          <button class="btn btn--peligro">Cancelar carga</button>
+          <button class="btn btn--primario">Corregir y continuar →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Historial de lotes -->
+    <section class="panel" style="margin-top:18px">
+      <div class="panel__encabezado">Historial de lotes importados (trazabilidad RF-073 / RF-076)</div>
+      <table class="ie-tabla">
+        <thead><tr><th>Lote</th><th>Archivo</th><th>Cargado por</th><th>Fecha</th><th>Exitosos</th><th>Errores</th><th>Estado</th><th>Acciones</th></tr></thead>
+        <tbody>
+          <tr><td>B-2026-014</td><td>PLANES_2024.xlsx</td><td>admin@ielaspalmas</td><td>02/07/26</td><td>186</td><td>0</td><td><span class="estado estado--pendiente">Pendiente valid.</span></td><td><button class="btn btn--ghost btn--sm">Ver</button></td></tr>
+          <tr><td>B-2026-013</td><td>PLANES_2023.xlsx</td><td>admin@ielaspalmas</td><td>30/06/26</td><td>201</td><td>3</td><td><span class="estado estado--rechazado">Con errores</span></td><td><button class="btn btn--ghost btn--sm">Ver</button></td></tr>
+          <tr><td>B-2026-012</td><td>PLANES_2022.xlsx</td><td>rector@ielaspalmas</td><td>15/06/26</td><td>198</td><td>0</td><td><span class="estado estado--aprobado">Validado</span></td><td><button class="btn btn--ghost btn--sm">Revertir (RF-076)</button></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="ie-pie">
+    IE Las Palmas · Importación de históricos · Ley 1581 de 2012
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

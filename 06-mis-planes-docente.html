@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 6 · Mis Planes (docente) · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 6</strong> · Listado "Mis Planes" del docente — por periodo y estado</span>
+    <span>RF-022 · RF-023 · RF-025</span>
+  </div>
+
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>Docente — Carolina Saldarriaga</span>
+      </div>
+      <div class="ie-header__usuario">
+        <strong>C. Saldarriaga</strong> · Docente
+        &nbsp;|&nbsp; <a href="02-login-sso.html">Cerrar sesión</a>
+      </div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="#" aria-current="page">Mis planes</a></li>
+        <li><a href="05-editor-plan-aula.html">Editor</a></li>
+        <li><a href="#">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ie-contenedor">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <h1 style="color:var(--ie-verde);margin:0">Mis planes — 2026</h1>
+      <button class="btn btn--primario">+ Crear nuevo Plan de Aula</button>
+    </div>
+    <p class="ayuda" style="margin:4px 0 16px">Solo ve los cursos, asignaturas y periodos asignados a usted (RF-023).</p>
+
+    <!-- Filtros -->
+    <section class="filtros">
+      <div class="campo">
+        <label>Periodo</label>
+        <select><option>Todos</option><option selected>02</option><option>03</option></select>
+      </div>
+      <div class="campo">
+        <label>Asignatura</label>
+        <select><option>Todas</option><option selected>Lengua Castellana</option><option>Producción textual</option></select>
+      </div>
+      <div class="campo">
+        <label>Grado</label>
+        <select><option>Todos</option><option>6°1</option><option>6°2</option></select>
+      </div>
+      <div class="campo">
+        <label>Estado</label>
+        <select><option>Todos</option><option>Borrador</option><option>Enviado</option><option>Aprobado</option><option>Rechazado</option></select>
+      </div>
+      <div class="campo" style="flex:0"><button class="btn btn--primario">Filtrar</button></div>
+    </section>
+
+    <!-- Tabla de mis planes -->
+    <section class="panel">
+      <table class="ie-tabla">
+        <thead>
+          <tr>
+            <th>Periodo</th><th>Grado</th><th>Asignatura</th><th>Actualizado</th><th>Estado</th><th>Observaciones</th><th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>02</td><td>6°1 - 6°2</td>
+            <td>Lengua Castellana — Comprensión lectora</td>
+            <td>30/06/2026</td>
+            <td><span class="estado estado--borrador">Borrador</span></td>
+            <td>—</td>
+            <td>
+              <a class="btn btn--enlace" href="05-editor-plan-aula.html">Editar</a> ·
+              <button class="btn btn--enlace">Ver PDF</button>
+            </td>
+          </tr>
+          <tr>
+            <td>01</td><td>6°1 - 6°2</td>
+            <td>Lengua Castellana — Comprensión lectora</td>
+            <td>12/03/2026</td>
+            <td><span class="estado estado--aprobado">Aprobado</span></td>
+            <td>2 observaciones</td>
+            <td>
+              <a class="btn btn--enlace" href="#">Ver</a> ·
+              <button class="btn btn--enlace">Descargar PDF</button>
+            </td>
+          </tr>
+          <tr>
+            <td>01</td><td>7°1</td>
+            <td>Producción textual</td>
+            <td>10/03/2026</td>
+            <td><span class="estado estado--rechazado">Devuelto</span></td>
+            <td>Ver corrección requerida</td>
+            <td>
+              <a class="btn btn--enlace" href="#">Corregir</a> ·
+              <button class="btn btn--enlace">Descargar PDF</button>
+            </td>
+          </tr>
+          <tr>
+            <td>02</td><td>6°2</td>
+            <td>Comprensión lectora</td>
+            <td>02/07/2026</td>
+            <td><span class="estado estado--enviado">Enviado</span></td>
+            <td>En revisión</td>
+            <td>
+              <a class="btn btn--enlace" href="#">Ver</a> ·
+              <button class="btn btn--enlace">Descargar PDF</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Avisos de Coordinación -->
+    <section class="panel" style="margin-top:18px">
+      <div class="panel__encabezado">Mensajes de Coordinación (RF-060)</div>
+      <div class="panel__cuerpo">
+        <div class="aviso aviso--alerta">
+          <strong>Plan 7°1 · Producción textual</strong> devuelto con observaciones. Corrija antes del <strong>10/07/2026</strong>.
+        </div>
+        <div class="aviso aviso--exito">
+          <strong>Plan 6°1 · Comprensión lectora</strong> aprobado sin observaciones.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ie-pie">
+    IE Las Palmas · Mis planes · 2026
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

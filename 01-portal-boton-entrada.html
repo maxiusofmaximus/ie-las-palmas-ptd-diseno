@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 1 · Portal institucional · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 1</strong> · Portal institucional con nuevo botón "Planes de Trabajo"</span>
+    <span>https://ielaspalmas.edu.co</span>
+  </div>
+
+  <!-- ============ Encabezado oficial ============ -->
+  <header class="ie-header">
+    <div class="ie-header__barra-superior">
+      <span>Gobierno Escolar · Sede Las Palmas · Envigado</span>
+      <span>
+        <a href="#">Intranet</a> ·
+        <a href="#">Correo institucional</a> ·
+        <a href="#">Mi Colombia Digital</a>
+      </span>
+    </div>
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Institución Educativa Las Palmas</strong>
+        <span>Sede principal · Envigado · Antioquia</span>
+      </div>
+      <div class="ie-header__usuario">
+        <strong>Búsqueda:</strong>
+        <input type="text" placeholder="Buscar en el sitio…" style="padding:5px 8px;border:1px solid #ccc;border-radius:4px">
+      </div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="#" aria-current="page">Inicio</a></li>
+        <li><a href="#">Nuestra Institución</a></li>
+        <li><a href="#">Resoluciones y Manuales</a></li>
+        <li><a href="#">Directivos</a></li>
+        <li><a href="#">PMI / Proyectos</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ Cuerpo del portal (resumen) ============ -->
+  <main class="ie-contenedor">
+    <h1 style="color:var(--ie-verde);margin-top:0">Bienvenidos a la IE Las Palmas</h1>
+    <p>
+      Institución oficial de Envigado, con énfasis en formación humana, convivencia
+      y proyecto de vida. Aquí encontrará información institucional, documentos
+      normativos, servicios para la comunidad educativa y herramientas de
+      gestión para docentes y directivos.
+    </p>
+
+    <!-- Bloque destacado del nuevo módulo -->
+    <section class="panel" style="border:2px solid var(--ie-verde-vivo)">
+      <div class="panel__encabezado">
+        <span>★</span> Nuevo · Herramientas para docentes
+      </div>
+      <div class="panel__cuerpo" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <h2 style="margin:0 0 6px;color:var(--ie-verde)">Módulo de Planes de Trabajo Docentes (PTD)</h2>
+          <p style="margin:0">
+            Diligencie, evalúe y haga seguimiento a los Planes de Aula en línea,
+            con asistencia de IA y exportación a PDF en el formato institucional.
+            Acceso con su usuario institucional (Colombia Digital).
+          </p>
+        </div>
+        <div style="text-align:center">
+          <a class="btn btn--primario btn--icono" href="02-login-sso.html" style="font-size:16px;padding:12px 22px">
+            ▶  Ingresar a Planes de Trabajo
+          </a>
+          <div style="font-size:11px;color:var(--ie-gris-4);margin-top:6px">
+            Redirige a <strong>ptd.ielaspalmas.edu.co</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección típica de portales Colombia Digital -->
+    <div class="ie-grid ie-grid--3" style="margin-top:20px">
+      <div class="panel">
+        <div class="panel__encabezado">Calendario académico</div>
+        <div class="panel__cuerpo"><p>Periodos 2026, reuniones y fechas clave.</p><a href="#">Ver más →</a></div>
+      </div>
+      <div class="panel">
+        <div class="panel__encabezado">Documentos institucionales</div>
+        <div class="panel__cuerpo"><p>Manuales, resoluciones y circulares vigentes.</p><a href="#">Ver más →</a></div>
+      </div>
+      <div class="panel">
+        <div class="panel__encabezado">Servicios a la comunidad</div>
+        <div class="panel__cuerpo"><p>Matrícula, certificados, atención a familias.</p><a href="#">Ver más →</a></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="ie-pie">
+    Institución Educativa Las Palmas · Envigado (Antioquia) ·
+    Teléfono: (4) 313 10 00 ·
+    <a href="mailto:contacto@ielaspalmas.edu.co">contacto@ielaspalmas.edu.co</a>
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

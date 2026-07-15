@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 8 · Administración · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 8</strong> · Administración — maestros, periodos y plantilla configurable</span>
+    <span>RF-010 · RF-011 · RF-012 · RF-013 · RF-014 · RF-015</span>
+  </div>
+
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>Administración del módulo</span>
+      </div>
+      <div class="ie-header__usuario">
+        <strong>Don Jorge Marulanda</strong> · Rector
+        &nbsp;|&nbsp; <a href="02-login-sso.html">Cerrar sesión</a>
+      </div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="03-dashboard-rectoria.html">Panel</a></li>
+        <li><a href="07-importacion-excel.html">Importar Excel</a></li>
+        <li><a href="#" aria-current="page">Administración</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ie-contenedor">
+    <h1 style="color:var(--ie-verde);margin-top:0">Administración — maestros y plantilla</h1>
+
+    <!-- Submenú de pestañas -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+      <button class="btn btn--primario">Docentes</button>
+      <button class="btn btn--secundario">Coord. / Rector</button>
+      <button class="btn btn--secundario">Años lectivos y periodos</button>
+      <button class="btn btn--secundario">Grados · Áreas · Asignaturas</button>
+      <button class="btn btn--secundario">Asignaciones</button>
+      <button class="btn btn--secundario">Plantilla del Plan (RF-014)</button>
+    </div>
+
+    <!-- Tabla de docentes -->
+    <section class="panel">
+      <div class="panel__encabezado">Docentes activos (RF-010)</div>
+      <div class="panel__cuerpo">
+        <div class="filtros">
+          <div class="campo"><label>Buscar</label><input type="text" placeholder="Nombre o documento"></div>
+          <div class="campo"><label>Estado</label><select><option>Todos</option><option>Activo</option><option>Inactivo</option></select></div>
+          <div class="campo" style="flex:0"><button class="btn btn--primario">Buscar</button></div>
+          <div class="campo" style="flex:0"><button class="btn btn--secundario">+ Nuevo docente</button></div>
+        </div>
+        <table class="ie-tabla">
+          <thead><tr><th>Documento</th><th>Nombre</th><th>Correo</th><th>Grados a cargo</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody>
+            <tr><td>CC 43.221.908</td><td>Carolina Saldarriaga</td><td>csaldarriaga@ielaspalmas.edu.co</td><td>6°1, 6°2</td><td><span class="estado estado--aprobado">Activo</span></td><td><button class="btn btn--enlace">Editar</button> · <button class="btn btn--enlace">Asignaciones</button></td></tr>
+            <tr><td>CC 15.987.654</td><td>Elizabeth Zuluaga</td><td>ezuluaga@ielaspalmas.edu.co</td><td>6°1, 6°2</td><td><span class="estado estado--aprobado">Activo</span></td><td><button class="btn btn--enlace">Editar</button></td></tr>
+            <tr><td>CC 70.123.456</td><td>Julián Arango</td><td>jarango@ielaspalmas.edu.co</td><td>8°1</td><td><span class="estado estado--aprobado">Activo</span></td><td><button class="btn btn--enlace">Editar</button></td></tr>
+            <tr><td>CC 22.334.556</td><td>Marcela Tabares</td><td>mtabares@ielaspalmas.edu.co</td><td>7°2</td><td><span class="estado estado--borrador">Inactivo</span></td><td><button class="btn btn--enlace">Activar</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Año lectivo y periodos -->
+    <section class="panel">
+      <div class="panel__encabezado">Año lectivo y periodos académicos (RF-011)</div>
+      <div class="panel__cuerpo">
+        <div class="ie-grid ie-grid--4">
+          <div class="campo"><label>Año lectivo</label><input type="text" value="2026"></div>
+          <div class="campo"><label>Periodo activo</label><select><option>01</option><option selected>02</option><option>03</option></select></div>
+          <div class="campo"><label>N° total de periodos</label><input type="number" value="11"></div>
+          <div class="campo" style="display:flex;align-items:flex-end"><button class="btn btn--primario">Guardar</button></div>
+        </div>
+        <p class="ayuda">Se admiten hasta 11 periodos por archivo (plantillas reales institucionales).</p>
+      </div>
+    </section>
+
+    <!-- Plantilla configurable del Plan de Aula -->
+    <section class="panel">
+      <div class="panel__encabezado">Plantilla configurable del Plan de Aula — versión vigente (RF-014 / RF-015)</div>
+      <div class="panel__cuerpo">
+        <div class="aviso aviso--info">
+          La estructura base (secciones 1–8 del SRS §10) se conserva fija; los <strong>campos</strong> de cada sección son configurables y versionables.
+        </div>
+
+        <table class="ie-tabla">
+          <thead><tr><th>Sección</th><th>Campo</th><th>Oblig.</th><th>Tipo</th><th>Visible docente</th><th>Visible coord.</th><th>Editar</th></tr></thead>
+          <tbody>
+            <tr><td>1. Caracterización</td><td>Descripción del grupo</td><td>Sí</td><td>Texto largo</td><td>✓</td><td>✓</td><td><button class="btn btn--enlace">Editar</button></td></tr>
+            <tr><td>2. Competencias</td><td>Específicas de área</td><td>Sí</td><td>Lista 1..4</td><td>✓</td><td>✓</td><td><button class="btn btn--enlace">Editar</button></td></tr>
+            <tr><td>3. Indicadores</td><td>Conceptuales %</td><td>Sí</td><td>Entero 0..100</td><td>✓</td><td>✓</td><td><button class="btn btn--enlace">Editar</button></td></tr>
+            <tr><td>4. Actividades</td><td>Evaluación</td><td>No</td><td>Texto largo</td><td>✓</td><td>✓</td><td><button class="btn btn--enlace">Editar</button></td></tr>
+            <tr><td>6. DUA</td><td>Pautas del principio</td><td>Sí</td><td>Checklist</td><td>✓</td><td>✓</td><td><button class="btn btn--enlace">Editar</button></td></tr>
+          </tbody>
+        </table>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn btn--secundario">+ Añadir campo</button>
+          <button class="btn btn--secundario">Vista previa</button>
+          <button class="btn btn--primario">Publicar nueva versión</button>
+          <span style="font-size:12px;color:var(--ie-gris-4);align-self:center">Versión actual: <strong>v1.3</strong> · históricos conservan su versión original</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ie-pie">
+    IE Las Palmas · Administración · Rectoría · 2026
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe resumido del proyecto · Módulo PTD · IE Las Palmas</title>
+<link rel="stylesheet" href="../estilos-base.css">
+<style>
+  .informe { max-width: 900px; margin: 0 auto; }
+  .informe h1 { color: var(--ie-verde); border-bottom: 3px solid var(--ie-verde-vivo); padding-bottom: 8px; }
+  .informe h2 { color: var(--ie-verde); margin-top: 26px; }
+  .informe h3 { color: var(--ie-azul); margin-top: 18px; }
+  .informe .sello-destinatario {
+    border: 1px solid var(--ie-gris-3); border-left: 5px solid var(--ie-verde-vivo);
+    background: #fff; padding: 12px 16px; border-radius: var(--radio); margin: 18px 0;
+  }
+  .informe table { margin: 12px 0; }
+  .resumen-ejecutivo {
+    background: var(--ie-azul-suave); border-left: 5px solid var(--ie-azul);
+    padding: 12px 16px; border-radius: var(--radio); margin: 16px 0;
+  }
+  .firma { margin-top: 30px; border-top: 1px solid var(--ie-gris-3); padding-top: 14px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header class="ie-header">
+  <div class="ie-header__contenedor">
+    <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+    <div class="ie-header__titulo">
+      <strong>Institución Educativa Las Palmas</strong>
+      <span>Envigado · Antioquia</span>
+    </div>
+  </div>
+</header>
+
+<main class="ie-contenedor informe">
+
+  <!-- Encabezado formal -->
+  <p style="text-align:right;color:var(--ie-gris-4);font-size:13px;margin:0 0 4px">Ref.: PTD-IELP-2026-001</p>
+  <p style="text-align:right;color:var(--ie-gris-4);font-size:13px;margin:0 0 4px">Envigado, julio de 2026</p>
+
+  <div class="sello-destinatario">
+    <strong>Señor</strong><br>
+    <strong>Don Jorge Marulanda</strong><br>
+    Rector de la Institución Educativa Las Palmas<br>
+    E. S. D.
+  </div>
+
+  <p>
+    <strong>Asunto:</strong> Informe resumido del proyecto "Módulo de Planes de Trabajo Docentes (PTD)"
+    y presentación de mock-ups de la idea de diseño.
+  </p>
+
+  <h1>1. Resumen ejecutivo</h1>
+
+  <div class="resumen-ejecutivo">
+    <p style="margin:0">
+      Se propone incorporar a la IE Las Palmas un <strong>módulo web de Planes de Trabajo Docentes (PTD)</strong>
+      que se integra al portal institucional <code>ielaspalmas.edu.co</code> —sin reemplazarlo— para digitalizar el diligenciamiento,
+      evaluación, seguimiento y reporte de los <strong>Planes de Aula</strong> en el formato institucional vigente
+      (plantillas reales analizadas: <em>Plan de Aula 2026 Español</em> y <em>Pensamiento Social</em>).
+      La herramienta incorpora un <strong>asistente de inteligencia artificial</strong> que sugiere redacción
+      para cada campo —sin reemplazar la criterio del docente— y un subsistema de <strong>importación de Excel</strong>
+      para migrar los históricos con trazabilidad y validación.
+    </p>
+  </div>
+
+  <h2>2. ¿Qué problema resuelve?</h2>
+  <p>
+ Hoy el Plan de Aula se diligencia en Excel y circula por correo. Esto genera:
+  </p>
+  <ul>
+    <li><strong>Dificultad para hacer seguimiento:</strong> Coordinación y Rectoría no tienen visión consolidada ni en tiempo real.</li>
+    <li><strong>Trabajo repetitivo del docente:</strong> redacta desde cero cada periodo, sin apoyo de IA.</li>
+    <li><strong>Históricos dispersos:</strong> los planes de años anteriores no se consultan ni se reaprovechan.</li>
+    <li><strong>Trazabilidad limitada:</strong> no hay registro de cambios ni de observaciones en el tiempo.</li>
+  </ul>
+
+  <h2>3. ¿Qué se propone?</h2>
+  <p>Un módulo web con ocho funciones principales:</p>
+  <table class="ie-tabla">
+    <thead><tr><th>Función</th><th>Beneficio</th></tr></thead>
+    <tbody>
+      <tr><td>Acceso con usuario institucional (Colombia Digital)</td><td>Sin contraseñas nuevas; entra con la misma cuenta.</td></tr>
+      <tr><td>Editor del Plan de Aula en línea</td><td>Replica exacta del formato institucional (8 secciones, DUA, indicadores con %).</td></tr>
+      <tr><td>Asistente de IA por campo</td><td>Sugiere, corrige, resume y propone actividades. El docente decide.</td></tr>
+      <tr><td>Evaluación y observaciones de Coordinación</td><td>Aprueba, devuelve, califica; todo con registro.</td></tr>
+      <tr><td>Tablero de Rectoría</td><td>KPIs: planes aprobados, pendientes, docentes sin plan, % de avance.</td></tr>
+      <tr><td>Importación de Excel</td><td>Migra los planes históricos con validación previa y sin perder trazabilidad.</td></tr>
+      <tr><td>Descarga en PDF</td><td>Formato institucional listo para impresión o archivo.</td></tr>
+      <tr><td>Auditoría y trazabilidad</td><td>Historial completo por plan; origen manual vs. importado.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Idea de diseño presentada (mock-ups)</h2>
+  <p>
+    Se prepararon <strong>8 mock-ups navegables</strong> en HTML/CSS que replican la identidad visual del portal
+    actual de la IE Las Palmas (paleta institucional extraída del CSS vigente).
+    Son wireframes de <strong>baja fidelidad</strong>: definen estructura, contenido y flujo, no el aspecto final.
+  </p>
+
+  <table class="ie-tabla">
+    <thead><tr><th>#</th><th>Pantalla</th><th>Para quién</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><a href="../01-portal-boton-entrada.html">Portal con botón de entrada</a></td><td>Comunidad educativa</td></tr>
+      <tr><td>2</td><td><a href="../02-login-sso.html">Acceso (SSO) y aterrizaje por rol</a></td><td>Todos</td></tr>
+      <tr><td>3</td><td><a href="../03-dashboard-rectoria.html">Tablero de Rectoría</a></td><td>Rector</td></tr>
+      <tr><td>4</td><td><a href="../04-dashboard-coordinacion.html">Tablero de Coordinación</a></td><td>Coordinación</td></tr>
+      <tr><td>5</td><td><a href="../05-editor-plan-aula.html">Editor del Plan de Aula con IA</a></td><td>Docente</td></tr>
+      <tr><td>6</td><td><a href="../06-mis-planes-docente.html">"Mis Planes" del docente</a></td><td>Docente</td></tr>
+      <tr><td>7</td><td><a href="../07-importacion-excel.html">Importación de Excel</a></td><td>Rector / Admin</td></tr>
+      <tr><td>8</td><td><a href="../08-administracion.html">Administración</a></td><td>Rector / Admin</td></tr>
+    </tbody>
+  </table>
+  <p class="ayuda">
+    Puede abrir el <a href="../index.html">índice navegable de los mock-ups</a> para recorrerlos en orden.
+  </p>
+
+  <h3>4.1 Identidad visual</h3>
+  <p>Se respeta el formato institucional actual:</p>
+  <ul>
+    <li>Encabezado con escudo, nombre de la institución y sede (igual al portal actual).</li>
+    <li>Barra superior verde institucional y navegación con enlaces del portal.</li>
+    <li>Paleta real extraída del CSS del sitio (<code>#4A6F2C</code> verde oscuro, <code>#488704</code> verde vivo,
+        <code>#A8C98D</code> verde claro, <code>#004884</code> azul de enlaces).</li>
+    <li>Tipografía sobria compatible con el portal (system-ui).</li>
+    <li>Pie de página con datos de contacto de la IE.</li>
+  </ul>
+  <div class="aviso aviso--info">
+    <strong>Por confirmar:</strong> el escudo institucional en alta resolución y, si aplica, la imagen de
+    cabecera del módulo. El resto de la identidad ya está alineada con el portal.
+  </div>
+
+  <h2>5. Cumplimiento normativo</h2>
+  <ul>
+    <li><strong>Ley 1581 de 2012</strong> (datos personales): los datos sensibles no se envían a la IA sin anonimizar; logs con redacción de PII.</li>
+    <li><strong>Accesibilidad WCAG 2.1 AA</strong>: contraste, etiquetas y navegación por teclado.</li>
+    <li><strong>Históricos exportables</strong> también a formato abierto (CSV), además de Excel y PDF.</li>
+    <li><strong>Auditoría inmutable:</strong> todo cambio queda registrado, sin sobrescribir.</li>
+  </ul>
+
+  <h2>6. Alcance y fases</h2>
+  <table class="ie-tabla">
+    <thead><tr><th>Fase</th><th>Entregable principal</th><th>Duración estimada</th></tr></thead>
+    <tbody>
+      <tr><td>F1 · Fundaciones</td><td>Autenticación, maestros, plantilla y editor básico</td><td>4–6 semanas</td></tr>
+      <tr><td>F2 · Evaluación</td><td>Flujo de Coordinación, observaciones, KPIs de Rectoría</td><td>3–4 semanas</td></tr>
+      <tr><td>F3 · IA e importación</td><td>Asistente IA por campo + importación de Excel</td><td>4–5 semanas</td></tr>
+      <tr><td>F4 · Reportes y afinamiento</td><td>PDF institucional, dashboards, accessibility AA</td><td>2–3 semanas</td></tr>
+    </tbody>
+  </table>
+  <p class="ayuda">Estimaciones preliminares; se refinarán con el equipo de desarrollo.</p>
+
+  <h2>7. Decisiones que requieren su aprobación</h2>
+  <ol>
+    <li>Confirmar el <strong>proveedor de IA</strong> sugerido (Inforge.dev) o indicar uno preferido.</li>
+    <li>Autorizar el <strong>acceso al usuario institucional</strong> (SSO Colombia Digital) para este módulo.</li>
+    <li>Designar a la persona que validará los <strong>históricos importados</strong> (Rector o delegado).</li>
+    <li>Confirmar el listado de <strong>periodos académicos</strong> y <strong>grados/asignaturas</strong> a cargar como maestros.</li>
+    <li>Aprobar el arranque de la <strong>Fase 1</strong>.</li>
+  </ol>
+
+  <h2>8. Riesgos y mitigación</h2>
+  <table class="ie-tabla">
+    <thead><tr><th>Riesgo</th><th>Mitigación</th></tr></thead>
+    <tbody>
+      <tr><td>El proveedor SSO no expone claims</td><td>Adaptador flexible; quedó previsto (S1 del SRS).</td></tr>
+      <tr><td>Plantillas Excel con variaciones</td><td>Parser tolerante + reporte de advertencias por lote.</td></tr>
+      <tr><td>Envío accidental de datos sensibles a la IA</td><td>Redacción obligatoria de PII; pruebas automatizadas.</td></tr>
+      <tr><td>Costo de IA fuera de control</td><td>Límites por rol/usuario/día y alertas de presupuesto.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9. Documentación técnica de respaldo</h2>
+  <p>
+    El respaldo técnico completo y trazable (norma IEEE 29148) se entregará junto con la documentación
+    del proyecto, fuera de este sitio de presentación. Si requiere acceso al repositorio técnico,
+    el equipo del proyecto se lo habilitará.
+  </p>
+
+  <div class="firma">
+    Cordialmente,<br><br>
+    <strong>Equipo de Análisis — Proyecto PTD IE Las Palmas</strong><br>
+    Plan de Trabajo IE Las Palmas Envigado · 2026<br>
+    <a href="mailto:contacto@ielaspalmas.edu.co">contacto@ielaspalmas.edu.co</a>
+  </div>
+
+</main>
+
+<footer class="ie-pie">
+  Institución Educativa Las Palmas · Envigado · 2026
+</footer>
+</body>
+</html>

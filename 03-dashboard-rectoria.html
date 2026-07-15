@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 3 · Dashboard Rectoría · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 3</strong> · Dashboard de Rectoría — KPIs institucionales y gobernanza</span>
+    <span>RF-040 · RF-041 · RF-042</span>
+  </div>
+
+  <!-- Encabezado institucional del módulo PTD -->
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>IE Las Palmas · Rectoría</span>
+      </div>
+      <div class="ie-header__usuario">
+        <strong>Don Jorge Marulanda</strong> · Rector
+        &nbsp;|&nbsp; <a href="02-login-sso.html">Cerrar sesión</a>
+      </div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="#" aria-current="page">Panel institucional</a></li>
+        <li><a href="#">Permisos y usuarios</a></li>
+        <li><a href="#">Parámetros generales</a></li>
+        <li><a href="07-importacion-excel.html">Históricos (Excel)</a></li>
+        <li><a href="08-administracion.html">Administración</a></li>
+        <li><a href="#">Reportes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ie-contenedor">
+    <h1 style="color:var(--ie-verde);margin-top:0">Panel institucional — Planes de Trabajo 2026</h1>
+
+    <!-- KPIs principales -->
+    <section class="ie-grid ie-grid--4">
+      <div class="kpi kpi--exito">
+        <div class="kpi__etiqueta">Planes aprobados</div>
+        <div class="kpi__valor">142</div>
+        <div class="kpi__detalle">de 198 esperados (71,7 %)</div>
+      </div>
+      <div class="kpi kpi--alerta">
+        <div class="kpi__etiqueta">Pendientes de evaluación</div>
+        <div class="kpi__valor">23</div>
+        <div class="kpi__detalle">asignados a Coordinación</div>
+      </div>
+      <div class="kpi kpi--error">
+        <div class="kpi__etiqueta">Docentes sin plan</div>
+        <div class="kpi__valor">11</div>
+        <div class="kpi__detalle">con retraso mayor a 7 días</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__etiqueta">% de avance</div>
+        <div class="kpi__valor">86 %</div>
+        <div class="kpi__detalle">diligenciamiento del periodo</div>
+      </div>
+    </section>
+
+    <!-- Gráficos -->
+    <section style="margin-top:18px" class="ie-grid ie-grid--2-8">
+      <div class="panel">
+        <div class="panel__encabezado">Planes por estado (periodo 02)</div>
+        <div class="panel__cuerpo">
+          <div class="grafico-barras">
+            <span class="grafico-barras__etiqueta">Aprobados</span>
+            <div class="grafico-barras__barra" style="width:72%"><span>142</span></div>
+            <span class="grafico-barras__etiqueta">Pendientes</span>
+            <div class="grafico-barras__barra" style="width:11%;border-left-color:var(--ie-amarillo);background:#fff8e1"><span>23</span></div>
+            <span class="grafico-barras__etiqueta">Borradores</span>
+            <div class="grafico-barras__barra" style="width:13%;background:var(--ie-gris-2)"><span>22</span></div>
+            <span class="grafico-barras__etiqueta">Rechazados</span>
+            <div class="grafico-barras__barra" style="width:4%;border-left-color:var(--ie-error);background:#fdecea"><span>8</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__encabezado">Avance por sede / jornada</div>
+        <div class="panel__cuerpo">
+          <div class="grafico-barras">
+            <span class="grafico-barras__etiqueta">Sede Principal · Mañana</span>
+            <div class="grafico-barras__barra" style="width:91%"><span>91 %</span></div>
+            <span class="grafico-barras__etiqueta">Sede Principal · Tarde</span>
+            <div class="grafico-barras__barra" style="width:84%"><span>84 %</span></div>
+            <span class="grafico-barras__etiqueta">Sede El Salado</span>
+            <div class="grafico-barras__barra" style="width:73%"><span>73 %</span></div>
+            <span class="grafico-barras__etiqueta">Media técnica</span>
+            <div class="grafico-barras__barra" style="width:68%"><span>68 %</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Validación de históricos importados -->
+    <section class="panel" style="margin-top:18px">
+      <div class="panel__encabezado">Validación de históricos importados (RF-042)</div>
+      <div class="panel__cuerpo">
+        <div class="aviso aviso--alerta">
+          <strong>2 lotes</strong> pendientes de validación por Rectoría. Revise las inconsistencias detectadas por el sistema antes de aprobar.
+        </div>
+
+        <table class="ie-tabla">
+          <thead>
+            <tr>
+              <th>Lote</th><th>Archivo</th><th>Usuario que cargó</th>
+              <th>Planes</th><th>Advertencias</th><th>Errores</th><th>Estado</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>B-2026-014</td><td>PLANES_2024.xlsx</td><td>admin@ielaspalmas</td>
+              <td>186</td><td>7</td><td>0</td>
+              <td><span class="estado estado--pendiente">Pendiente</span></td>
+              <td><button class="btn btn--primario btn--sm">Validar</button></td>
+            </tr>
+            <tr>
+              <td>B-2026-013</td><td>PLANES_2023.xlsx</td><td>admin@ielaspalmas</td>
+              <td>204</td><td>2</td><td>3</td>
+              <td><span class="estado estado--rechazado">Con errores</span></td>
+              <td><button class="btn btn--ghost btn--sm">Ver detalle</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Acciones de gobernanza -->
+    <section class="ie-grid ie-grid--3" style="margin-top:18px">
+      <div class="panel">
+        <div class="panel__encabezado">Permisos globales (RF-040)</div>
+        <div class="panel__cuerpo">
+          <p>Defina quién puede <em>calificar</em>, <em>devolver</em> o <em>validar históricos</em>.</p>
+          <button class="btn btn--secundario">Configurar permisos</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__encabezado">Parámetros de IA</div>
+        <div class="panel__cuerpo">
+          <p>Proveedor (Inforge.dev), modelo, límites de tokens por docente/día, presupuesto.</p>
+          <button class="btn btn--secundario">Ir a parámetros</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__encabezado">Exportar reportes (RF-080)</div>
+        <div class="panel__cuerpo">
+          <p>Genere informes consolidados en PDF, Excel o CSV para el Consejo Académico.</p>
+          <button class="btn btn--secundario">Exportar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ie-pie">
+    IE Las Palmas · Rectoría · Don Jorge Marulanda · 2026
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

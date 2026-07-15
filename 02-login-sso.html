@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 2 · Acceso SSO y bienvenida por rol · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 2</strong> · Acceso con identidad institucional (Colombia Digital) + aterrizaje por rol</span>
+    <span>https://ptd.ielaspalmas.edu.co/acceso</span>
+  </div>
+
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>IE Las Palmas · Módulo PTD</span>
+      </div>
+      <div class="ie-header__usuario"><a href="01-portal-boton-entrada.html">← Volver al portal</a></div>
+    </div>
+  </header>
+
+  <main class="ie-contenedor" style="max-width:480px;text-align:center">
+    <!-- Tarjeta de acceso SSO -->
+    <div class="panel" style="margin-top:20px">
+      <div class="panel__encabezado" style="justify-content:center">Acceso institucional</div>
+      <div class="panel__cuerpo">
+        <div class="ie-header__escudo" aria-hidden="true" style="margin:0 auto 10px;width:64px;height:64px;font-size:15px">IE<br>LP</div>
+        <h2 style="margin:0 0 4px;color:var(--ie-verde)">Inicie sesión con su cuenta institucional</h2>
+        <p style="color:var(--ie-gris-4);margin:0 0 16px;font-size:13px">
+          Reutilizamos la autenticación de <strong>Colombia Digital</strong>. No es necesario crear un usuario nuevo.
+        </p>
+
+        <button class="btn btn--primario" style="width:100%;padding:12px">
+          ▶ Iniciar sesión con Colombia Digital
+        </button>
+
+        <div style="margin:14px 0;color:var(--ie-gris-3);font-size:12px">— o continúe con —</div>
+
+        <button class="btn btn--secundario" style="width:100%">Autenticación institucional (SSO interno)</button>
+        <p class="ayuda" style="font-size:11px">
+          Al autenticarse, el sistema leerá sus <em>claims</em> ( documento y rol ) y lo llevará a su espacio.
+        </p>
+      </div>
+    </div>
+
+    <div class="aviso aviso--info" style="text-align:left">
+      <strong>Privacidad:</strong> no se reenvían datos personales a la IA sin anonimización (Ley 1581 de 2012).
+    </div>
+  </main>
+
+  <!-- Aterrizaje por rol (mock) -->
+  <div style="background:var(--ie-gris-2);padding:20px;text-align:center;color:var(--ie-gris-4)">
+    <em>Tras autenticarse, el usuario es redirigido según su rol:</em>
+  </div>
+  <div class="ie-grid ie-grid--4" style="padding:0 16px 30px">
+    <a class="panel" href="03-dashboard-rectoria.html" style="text-decoration:none">
+      <div class="panel__encabezado">Rectoría</div>
+      <div class="panel__cuerpo"><p style="color:var(--ie-texto)">Indicadores, permisos y validación de históricos.</p></div>
+    </a>
+    <a class="panel" href="04-dashboard-coordinacion.html" style="text-decoration:none">
+      <div class="panel__encabezado">Coordinación</div>
+      <div class="panel__cuerpo"><p style="color:var(--ie-texto)">Calificar y devolver planes; observaciones.</p></div>
+    </a>
+    <a class="panel" href="06-mis-planes-docente.html" style="text-decoration:none">
+      <div class="panel__encabezado">Docente</div>
+      <div class="panel__cuerpo"><p style="color:var(--ie-texto)">Mis planes, editor del Plan de Aula, IA, PDF.</p></div>
+    </a>
+    <a class="panel" href="07-importacion-excel.html" style="text-decoration:none">
+      <div class="panel__encabezado">Administrador</div>
+      <div class="panel__cuerpo"><p style="color:var(--ie-texto)">Carga de Excel, parámetros y plantillas.</p></div>
+    </a>
+  </div>
+
+  <footer class="ie-pie">
+    IE Las Palmas · Módulo PTD · Acceso restringido a la comunidad educativa
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

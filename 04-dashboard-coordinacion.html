@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 4 · Dashboard Coordinación · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 4</strong> · Dashboard de Coordinación — revisión, calificar y devolver</span>
+    <span>RF-030 · RF-031 · RF-032 · RF-033</span>
+  </div>
+
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>IE Las Palmas · Coordinación Académica</span>
+      </div>
+      <div class="ie-header__usuario">
+        <strong>Coordinación Académica</strong>
+        &nbsp;|&nbsp; <a href="02-login-sso.html">Cerrar sesión</a>
+      </div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="#" aria-current="page">Planes por calificar</a></li>
+        <li><a href="#">Asignaciones docentes</a></li>
+        <li><a href="#">Seguimiento</a></li>
+        <li><a href="#">Reportes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ie-contenedor">
+    <h1 style="color:var(--ie-verde);margin-top:0">Planes por calificar — Periodo 02</h1>
+
+    <!-- Resumen de la carga -->
+    <section class="ie-grid ie-grid--4">
+      <div class="kpi kpi--alerta">
+        <div class="kpi__etiqueta">En revisión</div>
+        <div class="kpi__valor">23</div>
+        <div class="kpi__detalle">planes enviados</div>
+      </div>
+      <div class="kpi kpi--exito">
+        <div class="kpi__etiqueta">Aprobados hoy</div>
+        <div class="kpi__valor">12</div>
+        <div class="kpi__detalle">sin observaciones</div>
+      </div>
+      <div class="kpi kpi--error">
+        <div class="kpi__etiqueta">Devueltos</div>
+        <div class="kpi__valor">4</div>
+        <div class="kpi__detalle">con observaciones</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi__etiqueta">Tiempo promedio</div>
+        <div class="kpi__valor">1,7 d</div>
+        <div class="kpi__detalle">en responder al docente</div>
+      </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filtros" style="margin-top:18px">
+      <div class="campo">
+        <label>Docente</label>
+        <select><option>Todos</option><option>Carolina Saldarriaga</option><option>Elizabeth Zuluaga</option></select>
+      </div>
+      <div class="campo">
+        <label>Grado</label>
+        <select><option>Todos</option><option>6°</option><option>7°</option><option>8°</option></select>
+      </div>
+      <div class="campo">
+        <label>Asignatura / Área</label>
+        <select><option>Todas</option><option>Lengua Castellana</option><option>Pensamiento Social</option></select>
+      </div>
+      <div class="campo">
+        <label>Estado</label>
+        <select><option>Enviado</option><option>Aprobado</option><option>Rechazado</option></select>
+      </div>
+      <div class="campo" style="flex:0">
+        <button class="btn btn--primario">Filtrar</button>
+      </div>
+    </section>
+
+    <!-- Lista de planes por revisar -->
+    <section class="panel">
+      <div class="panel__encabezado">Planes enviados (RF-030)</div>
+      <table class="ie-tabla">
+        <thead>
+          <tr>
+            <th>Docente</th><th>Grado</th><th>Asignatura</th><th>Periodo</th>
+            <th>Enviado</th><th>Estado</th><th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>C. Saldarriaga · E. Zuluaga</td><td>6°1 / 6°2</td>
+            <td>Lengua Castellana — Comprensión lectora</td>
+            <td>02</td><td>30/06/2026</td>
+            <td><span class="estado estado--enviado">Enviado</span></td>
+            <td>
+              <a class="btn btn--enlace" href="05-editor-plan-aula.html">Abrir</a>
+              <button class="btn btn--primario btn--sm">Calificar</button>
+              <button class="btn btn--ghost btn--sm">Devolver</button>
+            </td>
+          </tr>
+          <tr>
+            <td>J. Arango</td><td>8°1</td>
+            <td>Pensamiento Social</td>
+            <td>02</td><td>28/06/2026</td>
+            <td><span class="estado estado--enviado">Enviado</span></td>
+            <td>
+              <a class="btn btn--enlace" href="05-editor-plan-aula.html">Abrir</a>
+              <button class="btn btn--primario btn--sm">Calificar</button>
+              <button class="btn btn--ghost btn--sm">Devolver</button>
+            </td>
+          </tr>
+          <tr>
+            <td>M. Tabares</td><td>7°2</td>
+            <td>Matemáticas</td>
+            <td>02</td><td>26/06/2026</td>
+            <td><span class="estado estado--rechazado">Devuelto</span></td>
+            <td>
+              <a class="btn btn--enlace" href="#">Abrir</a>
+              <button class="btn btn--ghost btn--sm">Reabrir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Panel de observación -->
+    <section class="panel" style="margin-top:18px">
+      <div class="panel__encabezado">Registrar observación (RF-031 · RF-032) — Plan: C. Saldarriaga · 6°</div>
+      <div class="panel__cuerpo">
+        <div class="campo">
+          <label>Pautas DUA evidentes (checklist)</label>
+          <div style="font-size:13px;background:var(--ie-gris-1);padding:8px;border-radius:4px">
+            <label><input type="checkbox" checked> Compromiso — opciones para captar el interés</label><br>
+            <label><input type="checkbox" checked> Representación — opciones para la percepción</label><br>
+            <label><input type="checkbox"> Acción y Expresión — opciones para la expresión</label>
+          </div>
+        </div>
+        <div class="campo">
+          <label>Observación de Coordinación <span class="req">*</span></label>
+          <textarea placeholder="Ej. El eje 2 requiere precisar los criterios de valoración…"></textarea>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn--exito" style="background:var(--ie-exito)">Aprobar plan</button>
+          <button class="btn btn--peligro">Rechazar</button>
+          <button class="btn btn--ghost">Devolver con observaciones</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ie-pie">
+    IE Las Palmas · Coordinación Académica · 2026
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

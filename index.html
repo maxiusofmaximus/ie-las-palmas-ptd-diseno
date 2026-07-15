@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-ups · Módulo PTD · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<header class="ie-header">
+  <div class="ie-header__contenedor">
+    <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+    <div class="ie-header__titulo">
+      <strong>Mock-ups · Módulo PTD</strong>
+      <span>Institución Educativa Las Palmas · Envigado</span>
+    </div>
+  </div>
+</header>
+
+<main class="ie-contenedor">
+  <div class="aviso aviso--info">
+    <strong>Propósito:</strong> visualizar las 8 pantallas principales del Módulo de Planes de Trabajo Docentes
+    antes del desarrollo. Identidad visual extraída del portal institucional
+    (<a href="https://ielaspalmas.edu.co" target="_blank">ielaspalmas.edu.co</a>) — paleta <code>#4A6F2C</code> / <code>#488704</code> / <code>#A8C98D</code> / <code>#004884</code>.
+    <br><strong>Nivel de fidelidad:</strong> wireframes de baja fidelidad (mock-ups).
+    <br><strong>Nota:</strong> el escudo real y las imágenes definitivas se integrarán al implementar.
+  </div>
+
+  <h2 style="color:var(--ie-verde)">Recorrido sugerido (flujo de uso)</h2>
+  <p class="ayuda">
+    Siga los mock-ups en orden para entender el flujo completo: desde el portal institucional hasta
+    la gestión del Plan de Aula y los reportes de Rectoría.
+  </p>
+
+  <div class="ie-grid ie-grid--3">
+    <a class="panel" href="01-portal-boton-entrada.html" style="text-decoration:none">
+      <div class="panel__encabezado">1 · Portal institucional</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">La página actual con el nuevo botón <strong>"Ingresar a Planes de Trabajo"</strong> (RF-002).</p>
+        <span class="estado estado--borrador">Rector / Docente / Comunidad</span>
+      </div>
+    </a>
+
+    <a class="panel" href="02-login-sso.html" style="text-decoration:none">
+      <div class="panel__encabezado">2 · Acceso (SSO)</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">Reutiliza la autenticación de Colombia Digital; aterrizaje por rol (RF-001).</p>
+        <span class="estado estado--borrador">Todos los roles</span>
+      </div>
+    </a>
+
+    <a class="panel" href="03-dashboard-rectoria.html" style="text-decoration:none">
+      <div class="panel__encabezado">3 · Dashboard Rectoría</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">KPIs institucionales, gráficos y validación de históricos (RF-040..042).</p>
+        <span class="estado estado--aprobado">Rector</span>
+      </div>
+    </a>
+
+    <a class="panel" href="04-dashboard-coordinacion.html" style="text-decoration:none">
+      <div class="panel__encabezado">4 · Dashboard Coordinación</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">Planes por calificar, observaciones, aprobar/rechazar (RF-030..033).</p>
+        <span class="estado estado--pendiente">Coordinación</span>
+      </div>
+    </a>
+
+    <a class="panel" href="05-editor-plan-aula.html" style="text-decoration:none">
+      <div class="panel__encabezado">5 · Editor del Plan de Aula</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">Formulario por secciones del Plan con IA por campo (RF-020..024, RF-050).</p>
+        <span class="estado estado--enviado">Docente</span>
+      </div>
+    </a>
+
+    <a class="panel" href="06-mis-planes-docente.html" style="text-decoration:none">
+      <div class="panel__encabezado">6 · Mis Planes</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">Listado por periodo y estado, descarga PDF (RF-022, RF-023, RF-025).</p>
+        <span class="estado estado--enviado">Docente</span>
+      </div>
+    </a>
+
+    <a class="panel" href="07-importacion-excel.html" style="text-decoration:none">
+      <div class="panel__encabezado">7 · Importación Excel</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">Carga, validación, transformación y trazabilidad (RF-070..076).</p>
+        <span class="estado estado--pendiente">Rector / Admin</span>
+      </div>
+    </a>
+
+    <a class="panel" href="08-administracion.html" style="text-decoration:none">
+      <div class="panel__encabezado">8 · Administración</div>
+      <div class="panel__cuerpo">
+        <p style="color:var(--ie-texto)">Maestros, periodos y plantilla configurable (RF-010..015).</p>
+        <span class="estado estado--pendiente">Rector / Admin</span>
+      </div>
+    </a>
+  </div>
+
+  <h2 style="color:var(--ie-verde);margin-top:30px">Trazabilidad de pantallas → requisitos</h2>
+  <table class="ie-tabla">
+    <thead><tr><th>Pantalla</th><th>Requisitos cubiertos</th><th>Actor principal</th></tr></thead>
+    <tbody>
+      <tr><td>1. Portal (botón de entrada)</td><td>RF-002 (dominio + botón)</td><td>Comunidad</td></tr>
+      <tr><td>2. Acceso SSO</td><td>RF-001</td><td>Todos</td></tr>
+      <tr><td>3. Dashboard Rectoría</td><td>RF-040, RF-041, RF-042, RF-080</td><td>Rector</td></tr>
+      <tr><td>4. Dashboard Coordinación</td><td>RF-030, RF-031, RF-032, RF-033</td><td>Coordinación</td></tr>
+      <tr><td>5. Editor del Plan</td><td>RF-020, RF-021, RF-022, RF-023, RF-024, RF-025, RF-050</td><td>Docente</td></tr>
+      <tr><td>6. Mis Planes</td><td>RF-022, RF-023, RF-025, RF-060</td><td>Docente</td></tr>
+      <tr><td>7. Importación Excel</td><td>RF-070, RF-071, RF-072, RF-073, RF-074, RF-075, RF-076</td><td>Rector/Admin</td></tr>
+      <tr><td>8. Administración</td><td>RF-010, RF-011, RF-012, RF-013, RF-014, RF-015</td><td>Rector/Admin</td></tr>
+    </tbody>
+  </table>
+
+  <p class="ayuda" style="margin-top:20px">
+    Documentación técnica de respaldo: <a href="../../docs/README.md">docs/README.md</a> ·
+    SRS completo: <a href="../../docs/01-requerimientos/SRS-IEEE-29148.md">SRS-IEEE-29148.md</a>
+  </p>
+</main>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

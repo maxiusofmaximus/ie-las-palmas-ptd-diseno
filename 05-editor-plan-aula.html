@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 5 · Editor del Plan de Aula · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 5</strong> · Editor del Plan de Aula (docente) — con asistencia de IA por campo</span>
+    <span>RF-020..024 · RF-050 · SRS §10</span>
+  </div>
+
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>Docente — Carolina Saldarriaga</span>
+      </div>
+      <div class="ie-header__usuario">
+        <strong>C. Saldarriaga</strong> · Docente
+        &nbsp;|&nbsp; <a href="02-login-sso.html">Cerrar sesión</a>
+      </div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="06-mis-planes-docente.html">Mis planes</a></li>
+        <li><a href="#" aria-current="page">Editor</a></li>
+        <li><a href="#">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ie-contenedor">
+
+    <!-- Encabezado del Plan (replica §10.2 del SRS) -->
+    <section class="panel">
+      <div class="panel__encabezado">
+        Encabezado del Plan de Aula — Periodo 02 · Año 2026
+      </div>
+      <div class="panel__cuerpo">
+        <div class="ie-grid ie-grid--4">
+          <div class="campo">
+            <label>Docente(s) <span class="req">*</span></label>
+            <input type="text" value="Carolina Saldarriaga - Elizabeth Zuluaga" readonly>
+            <div class="ayuda">Dupla pedagógica admitida (planes en dupla).</div>
+          </div>
+          <div class="campo">
+            <label>Área / Nodo / Asignatura <span class="req">*</span></label>
+            <input type="text" value="Lengua Castellana — Comprensión lectora">
+          </div>
+          <div class="campo">
+            <label>Grado(s) <span class="req">*</span></label>
+            <input type="text" value="6°1 - 6°2">
+          </div>
+          <div class="campo">
+            <label>Periodo <span class="req">*</span></label>
+            <select><option>01</option><option selected>02</option><option>03</option></select>
+          </div>
+          <div class="campo">
+            <label>Fecha inicio</label>
+            <input type="date" value="2026-04-28">
+          </div>
+          <div class="campo">
+            <label>N° de Semanas</label>
+            <input type="number" value="13">
+          </div>
+          <div class="campo">
+            <label>N° de Clases</label>
+            <input type="number" value="65">
+          </div>
+          <div class="campo">
+            <label>Fecha cierre</label>
+            <input type="date" value="2026-08-13">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 1: Caracterización por grupo -->
+    <section class="panel">
+      <div class="panel__encabezado">1. Caracterización del grupo o grado</div>
+      <div class="panel__cuerpo">
+        <div class="campo campo-con-ia">
+          <label>Grupo 6°1 <span class="req">*</span></label>
+          <div class="ia-acciones">
+            <button class="btn-ia" title="Generar borrador desde el historial del grupo">Borrador</button>
+            <button class="btn-ia" title="Mejorar redacción">Mejorar</button>
+          </div>
+          <textarea placeholder="Describa población, intereses, fortalezas, necesidades de apoyo…"></textarea>
+          <div class="ayuda">IA con redacción de PII (aplica Ley 1581 de 2012): los nombres se anonimizan antes de enviar.</div>
+        </div>
+        <div class="campo campo-con-ia">
+          <label>Grupo 6°2</label>
+          <div class="ia-acciones">
+            <button class="btn-ia">Borrador</button>
+            <button class="btn-ia">Mejorar</button>
+          </div>
+          <textarea></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2: Competencias -->
+    <section class="panel">
+      <div class="panel__encabezado">2. Competencias</div>
+      <div class="panel__cuerpo">
+        <div class="seccion-plan">
+          <h4>Específicas de Área / Nodo / Asignatura</h4>
+          <div class="campo campo-con-ia">
+            <label>Competencias específicas (1..4)</label>
+            <div class="ia-acciones"><button class="btn-ia">Generar</button></div>
+            <textarea placeholder="1. ⋯ 2. ⋯ 3. ⋯ 4. ⋯"></textarea>
+          </div>
+        </div>
+        <div class="seccion-plan">
+          <h4>Básicas y socioemocionales</h4>
+          <div class="campo campo-con-ia">
+            <label>Intrapersonal / Interpersonal / Proyecto de vida</label>
+            <div class="ia-acciones"><button class="btn-ia">Generar</button></div>
+            <textarea></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3: Indicadores de desempeño -->
+    <section class="panel">
+      <div class="panel__encabezado">3. Indicadores de desempeño (con porcentajes)</div>
+      <div class="panel__cuerpo">
+        <table class="ie-tabla">
+          <thead><tr><th>Categoría</th><th>Indicador</th><th>%</th><th>IA</th></tr></thead>
+          <tbody>
+            <tr><td>Conceptuales</td><td><input type="text" style="width:100%"></td><td><input type="number" value="23" style="width:60px"></td><td><button class="btn-ia">Propor</button></td></tr>
+            <tr><td>Procedimentales</td><td><input type="text" style="width:100%"></td><td><input type="number" value="23" style="width:60px"></td><td><button class="btn-ia">Propor</button></td></tr>
+            <tr><td>Actitudinales</td><td><input type="text" style="width:100%"></td><td><input type="number" value="23" style="width:60px"></td><td><button class="btn-ia">Propor</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sección 4: Actividades y clases por eje/unidad/dimensión -->
+    <section class="panel">
+      <div class="panel__encabezado">4. Actividades y número de clases — Eje / Unidad / Dimensión</div>
+      <div class="panel__cuerpo">
+        <div class="aviso aviso--info">
+          Pulse <strong>+ Eje</strong> para añadir cada eje temático. Cada eje tiene sus actividades de inicio, nueva información y finalización.
+        </div>
+        <table class="ie-tabla">
+          <thead>
+            <tr><th>N°</th><th>Eje / Unidad / Dimensión</th><th>Inicio y saberes previos</th><th>Nueva información</th><th>Finalización</th><th>Evaluación</th><th>Criterios de valoración</th><th>IA</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Comprensión inferencial</td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><button class="btn-ia">Sugerir</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Producción textual</td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><textarea></textarea></td>
+              <td><button class="btn-ia">Sugerir</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn--secundario">+ Añadir eje / unidad</button>
+      </div>
+    </section>
+
+    <!-- Sección 5: Seguimiento del docente -->
+    <section class="panel">
+      <div class="panel__encabezado">5. Seguimiento del docente a la ejecución (por grupo)</div>
+      <div class="panel__cuerpo">
+        <div class="campo campo-con-ia">
+          <label>Grupo 6°1</label>
+          <div class="ia-acciones"><button class="btn-ia">Resumir</button></div>
+          <textarea></textarea>
+        </div>
+        <div class="campo campo-con-ia">
+          <label>Grupo 6°2</label>
+          <div class="ia-acciones"><button class="btn-ia">Resumir</button></div>
+          <textarea></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 6: Principio DUA -->
+    <section class="panel">
+      <div class="panel__encabezado">6. Principio DUA — pautas</div>
+      <div class="panel__cuerpo">
+        <div class="seccion-plan">
+          <h4>Compromiso</h4>
+          <label><input type="checkbox"> Opciones para captar el interés</label> ·
+          <label><input type="checkbox"> Mantener el esfuerzo y la persistencia</label> ·
+          <label><input type="checkbox"> Autorregulación</label>
+        </div>
+        <div class="seccion-plan">
+          <h4>Representación</h4>
+          <label><input type="checkbox"> Opciones para la percepción</label> ·
+          <label><input type="checkbox"> Lenguaje y símbolos</label> ·
+          <label><input type="checkbox"> Comprensión</label>
+        </div>
+        <div class="seccion-plan">
+          <h4>Acción y Expresión</h4>
+          <label><input type="checkbox"> Interacción física</label> ·
+          <label><input type="checkbox"> Expresión y comunicación</label> ·
+          <label><input type="checkbox"> Funciones ejecutivas</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 7 y 8: Seguimientos por actor (lectura) -->
+    <section class="panel">
+      <div class="panel__encabezado">7 y 8. Seguimiento — Coordinación / Apoyo Psicopedagógico</div>
+      <div class="panel__cuerpo">
+        <div class="aviso aviso--info">Estos campos son diligenciados por Coordinación y Apoyo Psicopedagógico. El docente los visualiza en lectura.</div>
+        <p><strong>Coordinación (06/05/26):</strong> "<em>Plan aprobado con observaciones menores en el eje 2.</em>"</p>
+        <p><strong>Apoyo Psicopedagógico:</strong> pendiente.</p>
+      </div>
+    </section>
+
+    <!-- Barra de acciones -->
+    <div style="position:sticky;bottom:0;background:#fff;border-top:2px solid var(--ie-verde-vivo);padding:12px 16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between">
+      <span style="font-size:12px;color:var(--ie-gris-4)">
+        <span class="estado estado--borrador">Borrador</span> · Guardado automático: hace 1 min
+      </span>
+      <span style="display:flex;gap:8px">
+        <button class="btn btn--secundario">Guardar borrador</button>
+        <button class="btn btn--azul">Descargar PDF (RF-025)</button>
+        <button class="btn btn--primario">Enviar a Coordinación</button>
+      </span>
+    </div>
+  </main>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

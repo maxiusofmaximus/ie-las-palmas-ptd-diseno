@@ -1,0 +1,425 @@
+/* =====================================================================
+   IE Las Palmas (Envigado) · Módulo PTD · Hoja de estilos de mock-ups
+   Paleta extraída del portal real (theme7/styles.css):
+     - Verde oscuro (institucional):  #4A6F2C  (color de marca dominante)
+     - Verde vivo (acento/CTA):        #488704
+     - Verde claro (fondos suaves):     #A8C98D
+     - Azul institucional (enlaces):   #004884
+   Tipografía: system-ui (el portal usa Angular + font-awesome; replicamos
+   una USS sobria compatible con Colombia Digital).
+   Convención accesibilidad: WCAG 2.1 AA (contraste >= 4.5:1 en texto).
+   ===================================================================== */
+
+:root {
+  --ie-verde:        #4A6F2C;
+  --ie-verde-vivo:   #488704;
+  --ie-verde-claro:  #A8C98D;
+  --ie-azul:         #004884;
+  --ie-azul-suave:   #e6effd;
+  --ie-gris-1:       #f9f9f9;
+  --ie-gris-2:       #e7e7e7;
+  --ie-gris-3:       #c9c9c9;
+  --ie-gris-4:       #707070;
+  --ie-gris-5:       #434343;
+  --ie-texto:        #2b2b2b;
+  --ie-blanco:       #ffffff;
+  --ie-amarillo:     #ffab00;
+  --ie-error:        #b3261e;
+  --ie-exito:        #038f67;
+  --radio:           6px;
+  --sombra-1:        0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.08);
+  --sombra-2:        0 4px 12px rgba(0,0,0,.10);
+  --fuente:          'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fuente);
+  color: var(--ie-texto);
+  background: var(--ie-gris-1);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a { color: var(--ie-azul); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Encabezado institucional (réplica del portal) ---------- */
+.ie-header {
+  background: var(--ie-blanco);
+  border-bottom: 4px solid var(--ie-verde);
+  box-shadow: var(--sombra-1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.ie-header__barra-superior {
+  background: var(--ie-verde);
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ie-header__barra-superior a { color: #fff; }
+.ie-header__contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ie-header__escudo {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--ie-verde-claro);
+  display: grid;
+  place-items: center;
+  color: var(--ie-verde);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  border: 2px solid var(--ie-verde);
+  flex: 0 0 auto;
+}
+.ie-header__titulo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.ie-header__titulo strong {
+  color: var(--ie-verde);
+  font-size: 17px;
+  letter-spacing: .2px;
+}
+.ie-header__titulo span {
+  color: var(--ie-gris-4);
+  font-size: 12px;
+}
+.ie-header__usuario {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--ie-gris-4);
+}
+.ie-header__usuario strong { color: var(--ie-texto); }
+
+/* ---------- Navegación institucional ---------- */
+.ie-nav {
+  background: var(--ie-verde-vivo);
+  color: #fff;
+}
+.ie-nav__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ie-nav__lista li a {
+  display: block;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 14px;
+  text-decoration: none;
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+.ie-nav__lista li a:hover,
+.ie-nav__lista li a[aria-current="page"] {
+  background: var(--ie-verde);
+  text-decoration: none;
+}
+
+/* ---------- Contenedor y layout ---------- */
+.ie-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+}
+.ie-grid { display: grid; gap: 16px; }
+.ie-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.ie-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.ie-grid--2-8 { grid-template-columns: 2fr 8fr; }
+@media (max-width: 900px) {
+  .ie-grid--3, .ie-grid--4 { grid-template-columns: 1fr; }
+  .ie-grid--2-8 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Tarjetas KPI ---------- */
+.kpi {
+  background: var(--ie-blanco);
+  border: 1px solid var(--ie-gris-2);
+  border-left: 5px solid var(--ie-verde-vivo);
+  border-radius: var(--radio);
+  padding: 14px 16px;
+  box-shadow: var(--sombra-1);
+}
+.kpi__etiqueta { color: var(--ie-gris-4); font-size: 12px; text-transform: uppercase; letter-spacing: .5px; }
+.kpi__valor { font-size: 28px; font-weight: 700; color: var(--ie-verde); margin: 4px 0; }
+.kpi__detalle { font-size: 12px; color: var(--ie-gris-4); }
+.kpi--alerta { border-left-color: var(--ie-amarillo); }
+.kpi--alerta .kpi__valor { color: var(--ie-amarillo); }
+.kpi--error { border-left-color: var(--ie-error); }
+.kpi--error .kpi__valor { color: var(--ie-error); }
+.kpi--exito { border-left-color: var(--ie-exito); }
+.kpi--exito .kpi__valor { color: var(--ie-exito); }
+
+/* ---------- Paneles ---------- */
+.panel {
+  background: var(--ie-blanco);
+  border: 1px solid var(--ie-gris-2);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-1);
+  margin-bottom: 18px;
+}
+.panel__encabezado {
+  background: var(--ie-verde-claro);
+  color: var(--ie-verde);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--ie-gris-2);
+  font-weight: 700;
+  border-radius: var(--radio) var(--radio) 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel__cuerpo { padding: 16px; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: var(--radio);
+  padding: 9px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+}
+.btn:hover { text-decoration: none; }
+.btn--primario { background: var(--ie-verde-vivo); color: #fff; }
+.btn--primario:hover { background: var(--ie-verde); }
+.btn--secundario { background: var(--ie-blanco); color: var(--ie-verde); border-color: var(--ie-verde); }
+.btn--secundario:hover { background: var(--ie-azul-suave); }
+.btn--azul { background: var(--ie-azul); color: #fff; }
+.btn--azul:hover { background: #003660; }
+.btn--ghost { background: transparent; color: var(--ie-gris-4); border-color: var(--ie-gris-3); }
+.btn--ghost:hover { background: var(--ie-gris-1); }
+.btn--peligro { background: var(--ie-error); color: #fff; }
+.btn--enlace {
+  background: transparent; color: var(--ie-azul); border: none; padding: 6px 8px;
+}
+.btn--sm { padding: 6px 10px; font-size: 13px; }
+.btn--icono { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ---------- Tablas ---------- */
+.ie-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: var(--ie-blanco);
+}
+.ie-tabla th {
+  text-align: left;
+  background: var(--ie-verde);
+  color: #fff;
+  padding: 9px 12px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.ie-tabla td { padding: 10px 12px; border-bottom: 1px solid var(--ie-gris-2); }
+.ie-tabla tr:nth-child(even) td { background: var(--ie-gris-1); }
+.ie-tabla tr:hover td { background: var(--ie-azul-suave); }
+
+/* ---------- Etiquetas de estado ---------- */
+.estado {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.estado--borrador   { background: #eee; color: #555; }
+.estado--enviado    { background: #fff3cd; color: #8a6d00; }
+.estado--aprobado   { background: #d4edda; color: #1a6b2f; }
+.estado--rechazado  { background: #f8d7da; color: #842029; }
+.estado--pendiente  { background: #ffe5b4; color: #8a5a00; }
+
+/* ---------- Formularios ---------- */
+.campo { margin-bottom: 14px; }
+.campo label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 14px; }
+.campo label .req { color: var(--ie-error); }
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="password"],
+.campo input[type="date"],
+.campo input[type="file"],
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--ie-gris-3);
+  border-radius: var(--radio);
+  font-family: inherit;
+  font-size: 14px;
+  background: #fff;
+}
+.campo textarea { min-height: 80px; resize: vertical; }
+.campo .ayuda { font-size: 12px; color: var(--ie-gris-4); margin-top: 3px; }
+.campo-con-ia { position: relative; }
+.campo-con-ia .ia-acciones {
+  position: absolute; right: 6px; top: 6px;
+  display: flex; gap: 4px;
+}
+
+/* ---------- Botón de IA (acceso rápido a asistente) ---------- */
+.btn-ia {
+  background: var(--ie-azul);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-ia:hover { background: #003660; }
+.btn-ia::before { content: "✦"; }
+
+/* ---------- Mock-up: wrapper de "pantalla" ---------- */
+.pantalla-mockup {
+  border: 1px dashed var(--ie-gris-3);
+  background: var(--ie-blanco);
+  border-radius: var(--radio);
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: var(--sombra-1);
+}
+.pantalla-mockup__barra {
+  background: var(--ie-gris-2);
+  color: var(--ie-gris-4);
+  padding: 6px 12px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--ie-gris-3);
+}
+.pantalla-mockup__barra strong { color: var(--ie-verde); }
+
+/* ---------- Búsqueda y filtros ---------- */
+.filtros {
+  background: var(--ie-gris-1);
+  border: 1px solid var(--ie-gris-2);
+  border-radius: var(--radio);
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+.filtros .campo { margin: 0; min-width: 160px; flex: 1; }
+
+/* ---------- Gráfico de barras simple (CSS) ---------- */
+.grafico-barras {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 6px 10px;
+  align-items: center;
+  margin: 8px 0;
+}
+.grafico-barras__etiqueta { font-size: 13px; color: var(--ie-gris-5); }
+.grafico-barras__barra {
+  background: var(--ie-verde-claro);
+  border-left: 3px solid var(--ie-verde-vivo);
+  height: 18px;
+  border-radius: 2px;
+}
+.grafico-barras__barra > span { font-size: 11px; color: var(--ie-gris-4); margin-left: 6px; }
+
+/* ---------- Pasos (wizard de importación) ---------- */
+.pasos { counter-reset: paso; display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.pasos__paso {
+  counter-increment: paso;
+  flex: 1;
+  min-width: 130px;
+  background: var(--ie-gris-1);
+  border: 1px solid var(--ie-gris-2);
+  border-radius: var(--radio);
+  padding: 8px 10px 8px 34px;
+  position: relative;
+  font-size: 13px;
+}
+.pasos__paso::before {
+  content: counter(paso);
+  position: absolute;
+  left: 8px; top: 50%; transform: translateY(-50%);
+  background: var(--ie-gris-3);
+  color: #fff;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 700;
+}
+.pasos__paso--activo { background: var(--ie-azul-suave); border-color: var(--ie-azul); }
+.pasos__paso--activo::before { background: var(--ie-azul); }
+.pasos__paso--ok { background: #e8f5e9; border-color: var(--ie-verde-vivo); }
+.pasos__paso--ok::before { background: var(--ie-verde-vivo); content: "✓"; }
+
+/* ---------- Avisos/alertas ---------- */
+.aviso {
+  border-radius: var(--radio);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  border: 1px solid;
+}
+.aviso--info   { background: var(--ie-azul-suave); border-color: #b6c7ee; color: #1c3b6e; }
+.aviso--exito  { background: #e8f5e9; border-color: var(--ie-exito); color: #1a6b2f; }
+.aviso--alerta { background: #fff8e1; border-color: var(--ie-amarillo); color: #7a5200; }
+.aviso--error  { background: #fdecea; border-color: var(--ie-error); color: var(--ie-error); }
+
+/* ---------- Pills de secciones del Plan de Aula ---------- */
+.seccion-plan {
+  border-left: 3px solid var(--ie-verde-vivo);
+  background: var(--ie-gris-1);
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.seccion-plan h4 { margin: 0 0 6px; color: var(--ie-verde); font-size: 14px; }
+
+/* ---------- Pie común ---------- */
+.ie-pie {
+  background: var(--ie-verde);
+  color: #eaf3df;
+  text-align: center;
+  font-size: 12px;
+  padding: 12px;
+  margin-top: 30px;
+}
+.ie-pie a { color: #fff; }
+
+/* ---------- Sello "MOCK-UP" ---------- */
+.sello-mockup {
+  position: fixed;
+  right: 12px; bottom: 12px;
+  background: var(--ie-amarillo);
+  color: #4a3a00;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: var(--sombra-2);
+  z-index: 9999;
+  letter-spacing: .5px;
+}
