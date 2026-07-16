@@ -40,7 +40,7 @@ contenido y flujo; **no** el acabado visual final ni la lógica de la aplicació
   - Verde vivo / CTA: `#488704`
   - Verde claro / fondos suaves: `#A8C98D`
   - Azul de enlaces: `#004884`
-- Escudo: `logofinalpalmas300_200x200.png` (ver documentación interna).
+- Escudo: `logofinalpalmas.png`.
 - Tipografía: system-ui, compatible con el portal.
 - Accesibilidad: WCAG 2.1 AA (contraste, etiquetas).
 
@@ -79,8 +79,6 @@ elaborado bajo la norma **IEEE 29148**. Es la fuente de verdad para implementaci
 ├── 07-importacion-excel.html
 ├── 08-administracion.html
 ├── 09-ayuda-faq.html
-├── capturas.cjs                  # Script de capturas PNG (opcional)
-├── *.png                         # Capturas estáticas de cada pantallazo
 ├── documentacion/                # Documentación técnica IEEE 29148
 │   ├── index.html                # Índice navegable de la documentación
 │   ├── README.md
@@ -96,12 +94,11 @@ elaborado bajo la norma **IEEE 29148**. Es la fuente de verdad para implementaci
 
 ## 🚀 Cómo abrir en local
 
-Los HTML funcionan abriéndolos directamente con doble clic. Si quiere regenerar las capturas PNG
+Los HTML funcionan abriéndolos directamente con doble clic. Para regenerar el PDF del informe
 necesita [Playwright](https://playwright.dev/) instalado:
 
 ```bash
 npx playwright install chromium
-node capturas.cjs               # genera los PNG
 playwright pdf informe/informe-resumen-proyecto.html informe/Informe-resumen-proyecto.pdf --paper-format Letter
 ```
 
