@@ -320,6 +320,13 @@ a:hover { color: #003160; text-decoration-color: var(--ie-azul); }
 .ie-tabla tr:nth-child(even) td { background: var(--ie-gris-1); }
 .ie-tabla tbody tr { transition: background var(--transicion-rapida); }
 .ie-tabla tbody tr:hover td { background: var(--ie-azul-suave); }
+/* Inputs/textareas dentro de tablas: compactos y de ancho completo */
+.ie-tabla textarea { min-height: 56px; width: 100%; }
+.ie-tabla input[type="text"] { width: 100%; }
+.ie-tabla input[type="number"] { width: 72px; }
+.ie-tabla select { width: 100%; }
+/* Botones de IA dentro de tabla más pequeños */
+.ie-tabla .btn-ia { padding: 5px 9px; font-size: 12px; }
 
 /* ---------- Etiquetas de estado ---------- */
 .estado {
@@ -338,30 +345,46 @@ a:hover { color: #003160; text-decoration-color: var(--ie-azul); }
 .estado--pendiente  { background: #fff4db; color: #8a5a00; border-color: #ffd699; }
 
 /* ---------- Formularios ---------- */
-.campo { margin-bottom: 16px; }
-.campo label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 14px; }
-.campo label .req { color: var(--ie-error); }
-.campo input[type="text"],
-.campo input[type="email"],
-.campo input[type="password"],
-.campo input[type="date"],
-.campo input[type="file"],
-.campo select,
-.campo textarea {
-  width: 100%;
+/* Estilos base globales para inputs/select/textarea (aplica también a los que están
+   en tablas, celdas y其它 contextos fuera de .campo) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
   padding: 9px 11px;
   border: 1px solid var(--ie-gris-3);
   border-radius: var(--radio-sm);
   font-family: inherit;
   font-size: 14px;
   background: #fff;
+  color: var(--ie-texto);
   transition: border-color var(--transicion-rapida), box-shadow var(--transicion-rapida);
 }
-.campo input:hover, .campo select:hover, .campo textarea:hover { border-color: var(--ie-gris-4); }
-.campo input:focus, .campo select:focus, .campo textarea:focus {
+input:hover, select:hover, textarea:hover { border-color: var(--ie-gris-4); }
+input:focus, select:focus, textarea:focus {
   border-color: var(--ie-azul);
   box-shadow: 0 0 0 3px rgba(0,72,132,.15);
   outline: none;
+}
+textarea { min-height: 84px; resize: vertical; }
+
+.campo { margin-bottom: 16px; }
+.campo label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 14px; }
+.campo label .req { color: var(--ie-error); }
+/* Heredan ancho completo dentro de .campo */
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="password"],
+.campo input[type="number"],
+.campo input[type="date"],
+.campo input[type="file"],
+.campo select,
+.campo textarea {
+  width: 100%;
 }
 .campo textarea { min-height: 84px; resize: vertical; }
 .campo .ayuda { font-size: 12px; color: var(--ie-gris-4); margin-top: 5px; }
@@ -370,6 +393,17 @@ a:hover { color: #003160; text-decoration-color: var(--ie-azul); }
   position: absolute; right: 6px; top: 6px;
   display: flex; gap: 4px;
 }
+
+/* ---------- Checkboxes accesibles ---------- */
+input[type="checkbox"] {
+  width: 16px; height: 16px;
+  accent-color: var(--ie-verde-vivo);
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+label > input[type="checkbox"] { margin-right: 5px; }
+label:has(input[type="checkbox"]) { cursor: pointer; display: inline-flex; align-items: center; gap: 2px; }
 
 /* ---------- Botón de IA (acceso rápido a asistente) ---------- */
 .btn-ia {
