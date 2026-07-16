@@ -203,9 +203,11 @@ a:hover { color: #003160; text-decoration-color: var(--ie-azul); }
 .ie-grid--3 { grid-template-columns: repeat(3, 1fr); }
 .ie-grid--4 { grid-template-columns: repeat(4, 1fr); }
 .ie-grid--2-8 { grid-template-columns: 2fr 8fr; }
+.ie-grid--2 { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 900px) {
   .ie-grid--3, .ie-grid--4 { grid-template-columns: 1fr; }
   .ie-grid--2-8 { grid-template-columns: 1fr; }
+  .ie-grid--2 { grid-template-columns: 1fr; }
 }
 
 /* ---------- Tarjetas KPI ---------- */

@@ -10,6 +10,7 @@
 - **Informe para el Rector (HTML):** <https://maxiusofmaximus.github.io/ie-las-palmas-ptd-diseno/informe/informe-resumen-proyecto.html>
 - **Informe para el Rector (PDF):** <https://maxiusofmaximus.github.io/ie-las-palmas-ptd-diseno/informe/Informe-resumen-proyecto.pdf>
 - **Ayuda / FAQ (leer antes de revisar):** <https://maxiusofmaximus.github.io/ie-las-palmas-ptd-diseno/09-ayuda-faq.html>
+- **Documentación técnica (IEEE 29148):** <https://maxiusofmaximus.github.io/ie-las-palmas-ptd-diseno/documentacion/index.html>
 - **Repositorio GitHub:** <https://github.com/maxiusofmaximus/ie-las-palmas-ptd-diseno>
 
 ## 📋 ¿Qué hay aquí?
@@ -43,6 +44,24 @@ contenido y flujo; **no** el acabado visual final ni la lógica de la aplicació
 - Tipografía: system-ui, compatible con el portal.
 - Accesibilidad: WCAG 2.1 AA (contraste, etiquetas).
 
+## 📚 Documentación técnica
+
+La carpeta `documentacion/` contiene el respaldo técnico completo y trazable del proyecto,
+elaborado bajo la norma **IEEE 29148**. Es la fuente de verdad para implementación y gobernanza.
+
+| Documento | Descripción |
+|---|---|
+| `documentacion/01-requerimientos/SRS-IEEE-29148.md` | Especificación contractual completa (RF, RNF, RC, RD, RI) |
+| `documentacion/01-requerimientos/casos-de-uso-e-historias.md` | Casos de uso por actor + historias de usuario |
+| `documentacion/01-requerimientos/reglas-de-negocio.md` | Invariantes verificables (RN-###) |
+| `documentacion/02-arquitectura/modelo-de-dominio.md` | Bounded contexts, agregados, value objects (DDD) |
+| `documentacion/02-arquitectura/diagrama-de-arquitectura.md` | Vista C4 + hexagonal, despliegue |
+| `documentacion/03-datos/esquema-base-de-datos.md` | DDL PostgreSQL fuente de verdad |
+| `documentacion/04-api/especificacion-api.md` | Contrato REST/JSON con códigos PTD-###-XXXX |
+| `documentacion/05-backlog/backlog-inicial.md` | Épicas E0..E12, roadmap y DoR/DoD |
+
+Índice navegable en: <https://maxiusofmaximus.github.io/ie-las-palmas-ptd-diseno/documentacion/index.html>
+
 ## 🗂 Estructura del repositorio
 
 ```
@@ -50,6 +69,7 @@ contenido y flujo; **no** el acabado visual final ni la lógica de la aplicació
 ├── index.html                    # Índice navegable de mock-ups
 ├── estilos-base.css              # Hoja institucional compartida
 ├── logofinalpalmas.png           # Escudo real de la IE
+├── .nojekyll                     # Sirve Markdown crudo sin Jekyll
 ├── 01-portal-boton-entrada.html
 ├── 02-login-sso.html
 ├── 03-dashboard-rectoria.html
@@ -61,6 +81,14 @@ contenido y flujo; **no** el acabado visual final ni la lógica de la aplicació
 ├── 09-ayuda-faq.html
 ├── capturas.cjs                  # Script de capturas PNG (opcional)
 ├── *.png                         # Capturas estáticas de cada pantallazo
+├── documentacion/                # Documentación técnica IEEE 29148
+│   ├── index.html                # Índice navegable de la documentación
+│   ├── README.md
+│   ├── 01-requerimientos/
+│   ├── 02-arquitectura/
+│   ├── 03-datos/
+│   ├── 04-api/
+│   └── 05-backlog/
 └── informe/
     ├── informe-resumen-proyecto.html
     └── Informe-resumen-proyecto.pdf  # Versión imprimible para el Rector

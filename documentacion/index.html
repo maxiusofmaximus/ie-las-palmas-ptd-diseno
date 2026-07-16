@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentación técnica · Módulo PTD · IE Las Palmas</title>
+<link rel="stylesheet" href="../estilos-base.css">
+<style>
+  .doc-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:14px; margin:16px 0; }
+  .doc-grid > a {
+    text-decoration:none; color:var(--ie-texto);
+    display:block;
+  }
+  @media (max-width:700px){ .doc-grid { grid-template-columns: 1fr; } }
+  .doc-tarjeta-num { counter-reset: paso-doc; padding-left:0; }
+  .doc-tarjeta-num li {
+    counter-increment: paso-doc; list-style:none; position:relative;
+    padding: 12px 14px 12px 54px; margin-bottom: 12px;
+    background:#fff; border:1px solid var(--ie-gris-2); border-left:4px solid var(--ie-verde-vivo);
+    border-radius: var(--radio-sm);
+    transition: box-shadow var(--transicion), transform var(--transicion);
+  }
+  .doc-tarjeta-num li:hover { box-shadow: var(--sombra-2); transform: translateY(-1px); }
+  .doc-tarjeta-num li::before {
+    content: counter(paso-doc); position:absolute; left:12px; top:14px;
+    background: var(--ie-verde-vivo); color:#fff;
+    width:30px; height:30px; border-radius:50%;
+    display:grid; place-items:center; font-weight:700; font-size:13px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  }
+  .doc-tarjeta-num li a { text-decoration:none; color:var(--ie-texto); display:block; }
+  .doc-tarjeta-num li a strong { color:var(--ie-verde); font-family:var(--fuente-display); font-size:15px; display:block; margin-bottom:3px; }
+  .doc-tarjeta-num li a span { color:var(--ie-gris-4); font-size:13px; }
+  .doc-tarjeta-num li a:hover strong { color:#003160; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header class="ie-header">
+  <div class="ie-header__contenedor">
+    <img src="../logofinalpalmas.png" class="ie-header__escudo--logo" alt="Escudo IE Las Palmas">
+    <div class="ie-header__titulo">
+      <strong>Planes de Trabajo Docentes</strong>
+      <span>IE Las Palmas · Documentación técnica</span>
+    </div>
+    <div class="ie-header__usuario">
+      <a href="../index.html">← Mock-ups</a> ·
+      <a href="../informe/informe-resumen-proyecto.html">Informe</a>
+    </div>
+  </div>
+  <nav class="ie-nav">
+    <ul class="ie-nav__lista">
+      <li><a href="../index.html">Mock-ups</a></li>
+      <li><a href="../informe/informe-resumen-proyecto.html">Informe al Rector</a></li>
+      <li><a href="#" aria-current="page">Documentación técnica</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="ie-contenedor" style="max-width:880px">
+
+  <div class="aviso aviso--info">
+    <strong>Para el Rector y docentes interesados:</strong> esta es la documentación técnica completa
+    del proyecto, elaborada bajo la norma <strong>IEEE 29148</strong>. Es el respaldo formal del módulo
+    PTD. Si su interés es ver la idea visual primero, vaya a los <a href="../index.html">mock-ups</a>; 
+    si quiere ver el resumen ejecutivo, lea el <a href="../informe/informe-resumen-proyecto.html">informe</a>.
+  </div>
+
+  <h1>Documentación técnica del proyecto</h1>
+  <p>
+    El repositorio reúne la especificación contractual y técnica completa del Módulo de Planes de
+    Trabajo Docentes (PTD) de la IE Las Palmas. Está construido sobre el <em>Documento de Análisis de
+    Requerimientos de Software v1.0</em> y sobre el estudio de las plantillas reales del Plan de Aula
+    vigentes en la institución (<em>PLAN DE AULA 2026 ESPAÑOL.xlsx</em> y <em>PENSAMIENTO SOCIAL.xlsx</em>).
+  </p>
+
+  <h2>Orden de lectura sugerido</h2>
+  <p class="ayuda">Si va a leer los documentos en orden, este es el recomendado:</p>
+
+  <ol class="doc-tarjeta-num">
+    <li>
+      <a href="01-requerimientos/SRS-IEEE-29148.md" target="_blank">
+        <strong>SRS — Especificación de Requisitos de Software (IEEE 29148)</strong>
+        <span>El documento maestro. Describe el producto, requisitos funcionales y no funcionales, y la estructura real del Plan de Aula (§10).</span>
+      </a>
+    </li>
+    <li>
+      <a href="01-requerimientos/casos-de-uso-e-historias.md" target="_blank">
+        <strong>Casos de uso e historias de usuario</strong>
+        <span>Detalle observable del comportamiento que el sistema debe tener, por actor (docente, coordinación, rector, admin).</span>
+      </a>
+    </li>
+    <li>
+      <a href="01-requerimientos/reglas-de-negocio.md" target="_blank">
+        <strong>Reglas de negocio</strong>
+        <span>Invariantes verificables (RN-###) que el sistema debe cumplir en todo momento.</span>
+      </a>
+    </li>
+    <li>
+      <a href="02-arquitectura/modelo-de-dominio.md" target="_blank">
+        <strong>Modelo de dominio (DDD)</strong>
+        <span>Bounded contexts, agregados, value objects y puertos. El pilar del código backend.</span>
+      </a>
+    </li>
+    <li>
+      <a href="02-arquitectura/diagrama-de-arquitectura.md" target="_blank">
+        <strong>Diagrama de arquitectura</strong>
+        <span>Vista C4 + hexagonal (Ports & Adapters), despliegue y cross-cutting concerns.</span>
+      </a>
+    </li>
+    <li>
+      <a href="03-datos/esquema-base-de-datos.md" target="_blank">
+        <strong>Esquema de base de datos (DDL PostgreSQL)</strong>
+        <span>Fuente de verdad de la persistencia relacional con sus relaciones y ER.</span>
+      </a>
+    </li>
+    <li>
+      <a href="04-api/especificacion-api.md" target="_blank">
+        <strong>Especificación de API</strong>
+        <span>Contrato REST/JSON de servicios, con códigos de error PTD-XXX trazables.</span>
+      </a>
+    </li>
+    <li>
+      <a href="05-backlog/backlog-inicial.md" target="_blank">
+        <strong>Backlog inicial y roadmap</strong>
+        <span>Épicas E0..E12, historias de usuario, definition of ready y definition of done.</span>
+      </a>
+    </li>
+  </ol>
+
+  <h2>Mapa por audiencia</h2>
+  <p>¿Su rol? Lea primero el documento recomendado:</p>
+  <table class="ie-tabla">
+    <thead><tr><th>Si usted es…</th><th>Lea primero…</th><th>Para entender…</th></tr></thead>
+    <tbody>
+      <tr><td>Rector / Director</td><td>SRS §1, §2 y §6</td><td>el producto y su alcance</td></tr>
+      <tr><td>Coordinación Académica</td><td>SRS §10 + casos de uso UC-030..034</td><td>cómo se evalúa el Plan</td></tr>
+      <tr><td>Docente</td><td>SRS §10 + UC-020..025</td><td>cómo se diligencia el Plan</td></tr>
+      <tr><td>Producto / Proyecto</td><td>SRS completo + backlog</td><td>qué se construye y en qué orden</td></tr>
+      <tr><td>Desarrollo (backend)</td><td>Modelo de dominio + API + DDL</td><td>cómo se implementa</td></tr>
+      <tr><td>QA</td><td>Reglas de negocio + casos de uso + SRS §8</td><td>qué se debe probar</td></tr>
+      <tr><td>DevOps</td><td>Diagrama de arquitectura</td><td>cómo se despliega</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Convenciones de identificación</h2>
+  <ul>
+    <li><strong>RF-###</strong> — Requisitos funcionales (SRS §7.1)</li>
+    <li><strong>RNF-###</strong> — Requisitos no funcionales (ISO 25010)</li>
+    <li><strong>RC-###</strong> — Requisitos de cumplimiento</li>
+    <li><strong>RD-###</strong> — Requisitos de datos</li>
+    <li><strong>RI-###</strong> — Requisitos de interfaces externas</li>
+    <li><strong>RN-###</strong> — Reglas de negocio</li>
+    <li><strong>UC-###</strong> — Casos de uso</li>
+    <li><strong>HU-x.y</strong> — Historias de usuario por épica</li>
+    <li><strong>PTD-###-XXXX</strong> — Códigos de error de API</li>
+    <li><strong>E0..E12</strong> — Épicas del backlog</li>
+  </ul>
+
+  <div class="aviso aviso--alerta">
+    <strong>Nota:</strong> los enlaces abren archivos Markdown (`.md`). Si el navegador los muestra
+    como texto sin formato, puede verlos con formato en GitHub directamente:
+    <a href="https://github.com/maxiusofmaximus/ie-las-palmas-ptd-diseno/tree/main/documentacion" target="_blank">
+      ver en GitHub →
+    </a>
+  </div>
+
+  <p class="ayuda" style="margin-top:18px">
+    Documento sujeto a protección de datos personales colombiana (Ley 1581 de 2012).
+    No contiene PII real.
+  </p>
+</main>
+
+<footer class="ie-pie">
+  IE Las Palmas · Documentación técnica · 2026
+</footer>
+</body>
+</html>
