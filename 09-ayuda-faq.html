@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up 9 · Ayuda y FAQ · IE Las Palmas</title>
+<link rel="stylesheet" href="estilos-base.css">
+<style>
+  details.faq { border:1px solid var(--ie-gris-2); border-radius:6px; padding:0; margin-bottom:8px; background:#fff; }
+  details.faq summary { padding:12px 16px; cursor:pointer; font-weight:600; color:var(--ie-verde); list-style:none; display:flex; justify-content:space-between; }
+  details.faq summary::-webkit-details-marker { display:none; }
+  details.faq summary::after { content:"＋"; color:var(--ie-verde-vivo); font-weight:700; }
+  details.faq[open] summary::after { content:"－"; }
+  details.faq .respuesta { padding:0 16px 14px; color:var(--ie-texto); font-size:14px; }
+  .revision-num { counter-reset: paso-rev; }
+  .revision-num li { counter-increment: paso-rev; list-style:none; position:relative; padding-left:36px; margin-bottom:10px; }
+  .revision-num li::before { content:counter(paso-rev); position:absolute; left:0; top:0; background:var(--ie-verde-vivo); color:#fff; width:24px; height:24px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:12px; }
+</style>
+</head>
+<body>
+
+<div class="pantalla-mockup">
+  <div class="pantalla-mockup__barra">
+    <span><strong>Mock-up 9</strong> · Ayuda y FAQ — guía para revisar los mock-ups</span>
+    <span>Soporte del módulo PTD</span>
+  </div>
+
+  <header class="ie-header">
+    <div class="ie-header__contenedor">
+      <img src="logofinalpalmas.png" class="ie-header__escudo--logo" alt="Escudo IE Las Palmas">
+      <div class="ie-header__titulo">
+        <strong>Planes de Trabajo Docentes</strong>
+        <span>IE Las Palmas · Ayuda</span>
+      </div>
+      <div class="ie-header__usuario"><a href="index.html">← Volver al índice</a></div>
+    </div>
+    <nav class="ie-nav">
+      <ul class="ie-nav__lista">
+        <li><a href="index.html">Índice</a></li>
+        <li><a href="#" aria-current="page">Ayuda y FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ie-contenedor" style="max-width:880px">
+
+    <!-- Guía de revisión para el Rector -->
+    <section class="panel">
+      <div class="panel__encabezado">Guía para revisar estos mock-ups (recomendado)</div>
+      <div class="panel__cuerpo">
+        <p>
+          Estos <strong>mock-ups</strong> son un vistazo previo del diseño del Módulo; aún no son la
+          aplicación final. Para una revisión ordenada siga estos pasos:
+        </p>
+        <ol class="revision-num">
+          <li>Abra el <a href="index.html">índice</a> y <strong>vaya en orden del 1 al 8</strong>, no Salte pantallas: cada una va encadenada al flujo real de uso.</li>
+          <li>Empiece por <a href="01-portal-boton-entrada.html">Mock-up 1 (Portal)</a>: el botón verde "Ingresar a Planes de Trabajo" es el punto de entrada para docentes y coordinación.</li>
+          <li>Luego <a href="02-login-sso.html">Mock-up 2 (Acceso)</a>: observe que <strong>no se crean usuarios nuevos</strong>; se reusa la cuenta institucional de Colombia Digital.</li>
+          <li>Continúe por <a href="03-dashboard-rectoria.html">Mock-up 3 (Rectoría)</a>: es SU panel. Indicadores concretos en tiempo real.</li>
+          <li>Después <a href="04-dashboard-coordinacion.html">Mock-up 4 (Coordinación)</a>: revise el flujo de aprobar/devolver planes; es el principal ahorro de tiempo operativo.</li>
+          <li>En <a href="05-editor-plan-aula.html">Mock-up 5 (Editor)</a> preste atención a los <strong>botones azules con ✦</strong>: son el acceso a la IA <em>sugerente</em>, nunca automática.</li>
+          <li>En <a href="07-importacion-excel.html">Mock-up 7 (Importación)</a> observe el <strong>reporte de validación previa</strong>: el sistema avisa errores antes de cargar nada.</li>
+          <li>Al final, revise el <a href="../informe/informe-resumen-proyecto.html">Informe resumido</a> y la sección de <strong>decisiones que requieren aprobación</strong>.</li>
+        </ol>
+
+        <div class="aviso aviso--alerta">
+          <strong>¿Qué no ver aquí?</strong> Estos mock-ups son de <em>baja fidelidad</em>: definen <strong>qué información</strong> aparece y <strong>cómo fluye</strong>, pero los colores definitiveos, tipografía exacta, animaciones y estado final se afinan en la etapa de diseño de alta fidelidad.
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="panel">
+      <div class="panel__encabezado">Preguntas frecuentes</div>
+      <div class="panel__cuerpo">
+
+        <details class="faq">
+          <summary>¿La inteligencia artificial reemplaza al docente?</summary>
+          <div class="respuesta">
+            No. La IA <strong>solo sugiere</strong> (borrador, mejora de redacción, resumen, propuestas de actividades). El docente decide si acepta, edita o descarta. Conserva control total sobre cada campo.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿La IA recibe los nombres de mis estudiantes u otros datos sensibles?</summary>
+          <div class="respuesta">
+            No. Antes de enviar cualquier texto a la IA los datos personales se <strong>anonimizan</strong> automáticamente (Ley 1581 de 2012). Ningún PII viaja al proveedor de IA en texto plano.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿Qué pasa si los Excel históricos tienen variaciones o errores?</summary>
+          <div class="respuesta">
+            El sistema hace una <strong>validación previa</strong> y produce un reporte con errores de bloqueo (se corrigen antes de cargar) y advertencias (no bloquean). Si hay error grave, se <strong>revierte toda la carga</strong> (transacción única) y no queda nada a medias.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿Se pierde el formato institucional actual del Plan de Aula?</summary>
+          <div class="respuesta">
+            No. El editor replica las <strong>8 secciones de la plantilla vigente</strong> (caracterización, competencias, indicadores con %, actividades por eje, seguimiento, DUA, observaciones de Coordinación y Apoyo Psicopedagógico). El PDF descargado respeta el formato institucional.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿Quién configura los periodos, grados, áreas y plantillas?</summary>
+          <div class="respuesta">
+            Rectoría (o un administrador delegado) desde el <a href="08-administracion.html">Mock-up 8</a>. La plantilla del Plan de Aula es <strong>configurable y versionable</strong>: se conserva el histórico de versiones y los planes antiguos mantienen la suya.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿Soporta periodos en primaria (nodos) y secundaria (áreas)?</summary>
+          <div class="respuesta">
+            Sí. El sistema soporta <strong>ambos modelos</strong> — nodos (primaria) y áreas (secundaria) — tal como lo hacen las plantillas reales institucionales analizadas.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿Qué pasa si se va Internet o la IA falla?</summary>
+          <div class="respuesta">
+            El docente puede seguir <strong>guardando el plan sin IA</strong>. La IA es un apoyo opcional; el diligenciamiento no depende de ella. Hay un mecanismo de degradación controlada con mensaje al usuario.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿Cómo se auditoríban los cambios?</summary>
+          <div class="respuesta">
+            Cada acción (crear, editar, enviar, aprobar, importar) genera un registro inmutable con usuario, fecha y diff de cambios (RF-081/082). Es consultable por plan y por usuario, y nada se sobrescribe.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>¿El escudo y los colores del sitio son los reales?</summary>
+          <div class="respuesta">
+            La paleta de colores y el logo (logofinalpalmas) son los <strong>reales del portal institucional</strong>. Elaborados para el mock-up; el acabado final se ajusta en alta fidelidad.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Soporte / contacto -->
+    <section class="panel">
+      <div class="panel__encabezado">¿Encontró una observación o cambio?</div>
+      <div class="panel__cuerpo">
+        <p>
+          Anote sus observaciones por pantalla (p. ej. "Mock-up 5, sección 4: falta una columna X")
+          y compártalas con el equipo de análisis. Estamos atentos a:
+        </p>
+        <ul>
+          <li>Campos que sobren o falten en cada sección del Plan.</li>
+          <li>Información del tablero de Rectoría que le sería útil y no aparezca.</li>
+          <li>Validaciones que considere críticas al importar históricos.</li>
+          <li>Permisos por rol de su interés (quién puede ver/editar qué).</li>
+        </ul>
+        <p class="ayuda">Contacto del equipo del proyecto disponible en el informe resumido.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ie-pie">
+    IE Las Palmas · Ayuda · 2026
+  </footer>
+</div>
+
+<div class="sello-mockup">MOCK-UP · No es producción</div>
+</body>
+</html>

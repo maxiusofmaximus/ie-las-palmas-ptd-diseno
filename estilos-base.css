@@ -87,6 +87,15 @@ a:hover { text-decoration: underline; }
   border: 2px solid var(--ie-verde);
   flex: 0 0 auto;
 }
+/* Logo real (logofinalpalmas300.png) */
+.ie-header__escudo--logo {
+  background: transparent url("logofinalpalmas.png") center / contain no-repeat;
+  border-radius: 6px;
+  border: none;
+  color: transparent;
+  font-size: 0;
+  width: 60px; height: 60px;
+}
 .ie-header__titulo {
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es-CO">
 <head>
 <meta charset="utf-8">
@@ -8,7 +8,7 @@
 <style>
   .informe { max-width: 900px; margin: 0 auto; }
   .informe h1 { color: var(--ie-verde); border-bottom: 3px solid var(--ie-verde-vivo); padding-bottom: 8px; }
-  .informe h2 { color: var(--ie-verde); margin-top: 26px; }
+  .informe h2 { color: var(--ie-verde); margin-top: 26px; border-left: 5px solid var(--ie-verde-vivo); padding-left: 10px; }
   .informe h3 { color: var(--ie-azul); margin-top: 18px; }
   .informe .sello-destinatario {
     border: 1px solid var(--ie-gris-3); border-left: 5px solid var(--ie-verde-vivo);
@@ -19,14 +19,43 @@
     background: var(--ie-azul-suave); border-left: 5px solid var(--ie-azul);
     padding: 12px 16px; border-radius: var(--radio); margin: 16px 0;
   }
+  .impacto-num {
+    counter-reset: paso-i; list-style:none; padding-left:0;
+  }
+  .impacto-num li {
+    counter-increment: paso-i; list-style:none; position:relative;
+    padding-left:36px; margin-bottom:10px;
+  }
+  .impacto-num li::before {
+    content:counter(paso-i); position:absolute; left:0; top:0;
+    background:var(--ie-verde-vivo); color:#fff; width:24px; height:24px;
+    border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:12px;
+  }
+  .galeria-miniaturas { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin:12px 0 6px; }
+  .galeria-miniaturas a {
+    border:1px solid var(--ie-gris-2); border-radius:6px; padding:8px; text-decoration:none;
+    background:#fff; font-size:12px; color:var(--ie-texto); display:block;
+  }
+  .galeria-miniaturas a:hover { border-color: var(--ie-verde-vivo); }
+  .galeria-miniaturas a strong { color: var(--ie-verde); display:block; }
+  .galeria-miniaturas a span { color: var(--ie-gris-4); }
+  .fuentes { font-size:13px; color:var(--ie-gris-4); }
+  .fuentes li { margin-bottom: 4px; }
   .firma { margin-top: 30px; border-top: 1px solid var(--ie-gris-3); padding-top: 14px; font-size: 13px; }
+  @media (max-width:700px) { .galeria-miniaturas { grid-template-columns: 1fr 1fr; } }
+  @media print {
+    .no-print { display:none; }
+    .pantalla-mockup__barra, .sello-mockup, .ie-nav, .ie-header__usuario { display:none !important; }
+    body { background:#fff; }
+    .ie-header { position:static; }
+  }
 </style>
 </head>
 <body>
 
 <header class="ie-header">
   <div class="ie-header__contenedor">
-    <div class="ie-header__escudo" aria-hidden="true">IE<br>LP</div>
+    <img src="../logofinalpalmas.png" class="ie-header__escudo--logo" alt="Escudo IE Las Palmas">
     <div class="ie-header__titulo">
       <strong>Institución Educativa Las Palmas</strong>
       <span>Envigado · Antioquia</span>
@@ -61,14 +90,20 @@
       evaluación, seguimiento y reporte de los <strong>Planes de Aula</strong> en el formato institucional vigente
       (plantillas reales analizadas: <em>Plan de Aula 2026 Español</em> y <em>Pensamiento Social</em>).
       La herramienta incorpora un <strong>asistente de inteligencia artificial</strong> que sugiere redacción
-      para cada campo —sin reemplazar la criterio del docente— y un subsistema de <strong>importación de Excel</strong>
+      para cada campo —sin reemplazar el criterio del docente— y un subsistema de <strong>importación de Excel</strong>
       para migrar los históricos con trazabilidad y validación.
     </p>
   </div>
 
+  <p class="no-print">
+    ► <a href="../index.html">Ir al índice de mock-ups</a> ·
+    <a href="../09-ayuda-faq.html">Leer primero la guía de revisión</a> ·
+    <a href="informe-resumen-proyecto.pdf">Descargar este informe en PDF</a>
+  </p>
+
   <h2>2. ¿Qué problema resuelve?</h2>
   <p>
- Hoy el Plan de Aula se diligencia en Excel y circula por correo. Esto genera:
+    Hoy el Plan de Aula se diligencia en Excel y circula por correo. Esto genera:
   </p>
   <ul>
     <li><strong>Dificultad para hacer seguimiento:</strong> Coordinación y Rectoría no tienen visión consolidada ni en tiempo real.</li>
@@ -95,44 +130,80 @@
 
   <h2>4. Idea de diseño presentada (mock-ups)</h2>
   <p>
-    Se prepararon <strong>8 mock-ups navegables</strong> en HTML/CSS que replican la identidad visual del portal
-    actual de la IE Las Palmas (paleta institucional extraída del CSS vigente).
-    Son wireframes de <strong>baja fidelidad</strong>: definen estructura, contenido y flujo, no el aspecto final.
+    Se prepararon <strong>9 mock-ups navegables</strong> en HTML/CSS que replican la identidad visual del portal
+    actual de la IE Las Palmas: paleta institucional real y escudo <code>logofinalpalmas</code>.
+    Son <strong>wireframes de baja fidelidad</strong>: definen estructura, contenido y flujo, no el acabado final.
+  </p>
+
+  <div class="galeria-miniaturas">
+    <a href="../01-portal-boton-entrada.html"><strong>1 · Portal</strong><span>Botón de entrada al módulo</span></a>
+    <a href="../02-login-sso.html"><strong>2 · Acceso</strong><span>SSO Colombia Digital</span></a>
+    <a href="../03-dashboard-rectoria.html"><strong>3 · Rectoría</strong><span>KPIs y gobernanza</span></a>
+    <a href="../04-dashboard-coordinacion.html"><strong>4 · Coordinación</strong><span>Planes por calificar</span></a>
+    <a href="../05-editor-plan-aula.html"><strong>5 · Editor</strong><span>Plan de Aula con IA</span></a>
+    <a href="../06-mis-planes-docente.html"><strong>6 · Mis Planes</strong><span>Listado y PDF</span></a>
+    <a href="../07-importacion-excel.html"><strong>7 · Importación</strong><span>Excel con validación</span></a>
+    <a href="../08-administracion.html"><strong>8 · Administración</strong><span>Maestros y plantilla</span></a>
+    <a href="../09-ayuda-faq.html"><strong>9 · Ayuda</strong><span>Guía de revisión y FAQ</span></a>
+  </div>
+
+  <h2>5. Impacto y métricas esperadas</h2>
+  <p>
+    La incorporación de IA en la planeación docente muestra ahorros consistentes en estudios recientes.
+    A diferencia de recortar la calidad del Plan, estos ahorros se concentran en la <strong>redacción
+    desde cero</strong> y el <strong>trabajo repetitivo</strong>, justo donde la IA assistance brilla.
   </p>
 
   <table class="ie-tabla">
-    <thead><tr><th>#</th><th>Pantalla</th><th>Para quién</th></tr></thead>
+    <thead><tr><th>Métrica</th><th>Valor esperado</th><th>Fuente / referencia</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td><a href="../01-portal-boton-entrada.html">Portal con botón de entrada</a></td><td>Comunidad educativa</td></tr>
-      <tr><td>2</td><td><a href="../02-login-sso.html">Acceso (SSO) y aterrizaje por rol</a></td><td>Todos</td></tr>
-      <tr><td>3</td><td><a href="../03-dashboard-rectoria.html">Tablero de Rectoría</a></td><td>Rector</td></tr>
-      <tr><td>4</td><td><a href="../04-dashboard-coordinacion.html">Tablero de Coordinación</a></td><td>Coordinación</td></tr>
-      <tr><td>5</td><td><a href="../05-editor-plan-aula.html">Editor del Plan de Aula con IA</a></td><td>Docente</td></tr>
-      <tr><td>6</td><td><a href="../06-mis-planes-docente.html">"Mis Planes" del docente</a></td><td>Docente</td></tr>
-      <tr><td>7</td><td><a href="../07-importacion-excel.html">Importación de Excel</a></td><td>Rector / Admin</td></tr>
-      <tr><td>8</td><td><a href="../08-administracion.html">Administración</a></td><td>Rector / Admin</td></tr>
+      <tr>
+        <td>Ahorro semanal del docente por uso de IA</td>
+        <td><strong>~5,9 h/semana</strong> ≈ 6 semanas al año</td>
+        <td>Gallup · Walton Family Foundation (2025)</td>
+      </tr>
+      <tr>
+        <td>Ahorro reportado en Oak National Academy (UK)</td>
+        <td>hasta <strong>5 h/semana</strong></td>
+        <td>UNOWA (2024)</td>
+      </tr>
+      <tr>
+        <td>Reducción del tiempo de planeación</td>
+        <td><strong>Significativa</strong> (con IA generativa)</td>
+        <td>ERIC · EJ1475735 (2025)</td>
+      </tr>
+      <tr>
+        <td>Tiempo actual invertido en planeación semanal</td>
+        <td>Reconocido como carga que consume "horas, energía y paciencia"</td>
+        <td>Jorge Innova (2025, docentes LatAm)</td>
+      </tr>
     </tbody>
   </table>
-  <p class="ayuda">
-    Puede abrir el <a href="../index.html">índice navegable de los mock-ups</a> para recorrerlos en orden.
-  </p>
 
-  <h3>4.1 Identidad visual</h3>
-  <p>Se respeta el formato institucional actual:</p>
+  <h3>5.1 ¿Por qué subiría el % de diligenciamiento?</h3>
+  <ol class="impacto-num">
+    <li><strong>Menos fricción:</strong> el editor guía la estructura y guarda borradores automáticamente; se acabó el "se me cerró el Excel".</li>
+    <li><strong>Arranque con un clic:</strong> la IA genera un primer borrador desde el histórico del grupo; el docente edits, no escribe desde cero.</li>
+    <li><strong>Recordatorios oportunos:</strong> correos automáticos al iniciar el periodo, a los 7 y 14 días de retraso (RF-060).</li>
+    <li><strong>Visibilidad:</strong> el docente ve su estado sin pedir permiso; el panel del rector genera presión institucional positiva en tiempo real.</li>
+    <li><strong>Re-aprovechamiento:</strong> los planes de periodos anteriores quedan a un clic para copiar/adaptar, no para recomenzar.</li>
+  </ol>
+
+  <h3>5.2 ¿Por qué esto no reduce la calidad del Plan?</h3>
   <ul>
-    <li>Encabezado con escudo, nombre de la institución y sede (igual al portal actual).</li>
-    <li>Barra superior verde institucional y navegación con enlaces del portal.</li>
-    <li>Paleta real extraída del CSS del sitio (<code>#4A6F2C</code> verde oscuro, <code>#488704</code> verde vivo,
-        <code>#A8C98D</code> verde claro, <code>#004884</code> azul de enlaces).</li>
-    <li>Tipografía sobria compatible con el portal (system-ui).</li>
-    <li>Pie de página con datos de contacto de la IE.</li>
+    <li>La IA <strong>sugiere</strong>, el docente <strong>decide</strong>: no se auto-publica nada.</li>
+    <li>El formato institucional se respeta 1:1 (8 secciones, DUA, indicadores con %).</li>
+    <li>Coordinación sigue calificando y devolviendo; el ciclo evaluativo se mantiene.</li>
+    <li>La anonimización de datos sensibles protege a estudiantes (Ley 1581 de 2012).</li>
   </ul>
+
   <div class="aviso aviso--info">
-    <strong>Por confirmar:</strong> el escudo institucional en alta resolución y, si aplica, la imagen de
-    cabecera del módulo. El resto de la identidad ya está alineada con el portal.
+    <strong>Redacción honesta de estos números:</strong> los estudios citados son internacionales (EE. UU. y Reino Unido).
+    Una métrica <em>real</em> en la IE Las Palmas se mediría con un piloto controlado al iniciar la F1.
+    Mientras tanto, estos valores son una proyección razonable para sustentar la inversión y no una promesa contractual.
   </div>
 
-  <h2>5. Cumplimiento normativo</h2>
+  <h2>6. Cumplimiento normativo</h2>
   <ul>
     <li><strong>Ley 1581 de 2012</strong> (datos personales): los datos sensibles no se envían a la IA sin anonimizar; logs con redacción de PII.</li>
     <li><strong>Accesibilidad WCAG 2.1 AA</strong>: contraste, etiquetas y navegación por teclado.</li>
@@ -140,19 +211,19 @@
     <li><strong>Auditoría inmutable:</strong> todo cambio queda registrado, sin sobrescribir.</li>
   </ul>
 
-  <h2>6. Alcance y fases</h2>
+  <h2>7. Alcance y fases</h2>
   <table class="ie-tabla">
     <thead><tr><th>Fase</th><th>Entregable principal</th><th>Duración estimada</th></tr></thead>
     <tbody>
       <tr><td>F1 · Fundaciones</td><td>Autenticación, maestros, plantilla y editor básico</td><td>4–6 semanas</td></tr>
       <tr><td>F2 · Evaluación</td><td>Flujo de Coordinación, observaciones, KPIs de Rectoría</td><td>3–4 semanas</td></tr>
       <tr><td>F3 · IA e importación</td><td>Asistente IA por campo + importación de Excel</td><td>4–5 semanas</td></tr>
-      <tr><td>F4 · Reportes y afinamiento</td><td>PDF institucional, dashboards, accessibility AA</td><td>2–3 semanas</td></tr>
+      <tr><td>F4 · Reportes y afinamiento</td><td>PDF institucional, dashboards, accesibilidad AA</td><td>2–3 semanas</td></tr>
     </tbody>
   </table>
   <p class="ayuda">Estimaciones preliminares; se refinarán con el equipo de desarrollo.</p>
 
-  <h2>7. Decisiones que requieren su aprobación</h2>
+  <h2>8. Decisiones que requieren su aprobación</h2>
   <ol>
     <li>Confirmar el <strong>proveedor de IA</strong> sugerido (Inforge.dev) o indicar uno preferido.</li>
     <li>Autorizar el <strong>acceso al usuario institucional</strong> (SSO Colombia Digital) para este módulo.</li>
@@ -161,7 +232,7 @@
     <li>Aprobar el arranque de la <strong>Fase 1</strong>.</li>
   </ol>
 
-  <h2>8. Riesgos y mitigación</h2>
+  <h2>9. Riesgos y mitigación</h2>
   <table class="ie-tabla">
     <thead><tr><th>Riesgo</th><th>Mitigación</th></tr></thead>
     <tbody>
@@ -172,18 +243,41 @@
     </tbody>
   </table>
 
-  <h2>9. Documentación técnica de respaldo</h2>
+  <h2>10. Guía de revisión (recomendada)</h2>
+  <p>
+    Para sacar el máximo provecho de los mock-ups le sugerimos seguir el recorrido paso a paso:
+  </p>
+  <ol class="impacto-num">
+    <li>Leer primero la <a href="../09-ayuda-faq.html">pantalla de Ayuda / FAQ</a> — aclara qué es y qué no es un mock-up.</li>
+    <li>Abrir el <a href="../index.html">índice</a> y revisar las 9 pantallas en orden (1 → 9).</li>
+    <li>En el <a href="../05-editor-plan-aula.html">Editor del Plan</a>, observar los botones azules con ✦: ahí vive la IA <em>sugerente</em>.</li>
+    <li>En el <a href="../07-importacion-excel.html">Importador de Excel</a>, revisar el reporte de validación previa.</li>
+    <li>Volver a este informe y revisar la sección de <strong>decisiones que requieren aprobación</strong>.</li>
+    <li>Si tiene observaciones, anotarlas por pantalla y compartirlas con el equipo del proyecto.</li>
+  </ol>
+
+  <h2>11. Documentación técnica de respaldo</h2>
   <p>
     El respaldo técnico completo y trazable (norma IEEE 29148) se entregará junto con la documentación
     del proyecto, fuera de este sitio de presentación. Si requiere acceso al repositorio técnico,
     el equipo del proyecto se lo habilitará.
   </p>
 
+  <h3 class="fuentes">Fuentes consultadas (sección de impacto)</h3>
+  <ul class="fuentes">
+    <li>Gallup / Walton Family Foundation (2025). <em>Three in 10 Teachers Use AI Weekly, Saving Six Weeks a Year.</em> news.gallup.com</li>
+    <li>UNOWA (2024). <em>AI Reducing Teacher Workload: Case Studies</em> (Oak National Academy, Reino Unido). unowa.eu</li>
+    <li>ERIC EJ1475735 (2025). <em>Empowering Educators: Leveraging AI to Revolutionize Lesson Planning.</em> files.eric.ed.gov</li>
+    <li>Jorge Innova (2025). <em>Plantilla editable para planeación semanal de clases.</em> jorgeinnova.com</li>
+  </ul>
+  <p class="fuentes">Notas: las cifras de ahorro (~5–6 h/semana) corresponden a estudios en EE. UU. y Reino Unido; no son medidas locales. La medición específica de la IE Las Palmas se propone en F1 como piloto controlado.</p>
+
   <div class="firma">
     Cordialmente,<br><br>
-    <strong>Equipo de Análisis — Proyecto PTD IE Las Palmas</strong><br>
-    Plan de Trabajo IE Las Palmas Envigado · 2026<br>
-    <a href="mailto:contacto@ielaspalmas.edu.co">contacto@ielaspalmas.edu.co</a>
+    <strong>Pedro Abelardo</strong><br>
+    Equipo del proyecto PTD · IE Las Palmas<br>
+    <a href="mailto:maxlive@hotmail.es">maxlive@hotmail.es</a> ·
+    GitHub: <a href="https://github.com/maxiusofmaximus">@maxiusofmaximus</a>
   </div>
 
 </main>
