@@ -113,7 +113,7 @@ solicitud. Esta publicación pública contiene **solo** material de presentació
 
 ## 👤 Contacto
 
-- **Autor:** Pedro Abelardo
+- **Autor:** Pedro Abelardo Álvarez Ospina
 - **GitHub:** [@maxiusofmaximus](https://github.com/maxiusofmaximus)
 - **Correo:** [maxlive@hotmail.es](mailto:maxlive@hotmail.es)
 
